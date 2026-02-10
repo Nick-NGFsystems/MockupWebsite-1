@@ -643,6 +643,9 @@ main {
     padding: 12px 14px;
     border-radius: 12px;
     background: rgba(0, 0, 0, 0.02);
+    width: 100%;
+    display: block;
+    text-align: left;
   }
 
   .nav-toggle { display: inline-flex; }
