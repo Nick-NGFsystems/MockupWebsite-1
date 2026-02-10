@@ -3,86 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartion | Haute Joaillerie</title>
+  <title>NOMA | Fine Jewelry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="announcement-banner">
+    <p>Test Banner | Any Information can be added</p>
+  </div>
   <header class="site-header">
     <div class="brand">
-      <span class="brand-mark">Cartion</span>
-      <span class="brand-tag">Maison Joaillerie</span>
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <span class="brand-mark">NOMA</span>
+        <span class="brand-tag">Fine Jewelry</span>
+      </a>
     </div>
     <nav class="nav" aria-label="Primary">
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="#collections">Creations</a></li>
-        <li><a href="#maison">Maison</a></li>
-        <li><a href="#craft">Savoir-Faire</a></li>
-        <li><a href="#appointment">Appointments</a></li>
+        <li><a href="products.html">Shop All</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#custom-engraving">Custom Engraving</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="header-actions">
-      <button class="ghost">Boutiques</button>
-      <button class="solid">Book</button>
+      <button class="ghost">Search</button>
+      <button class="solid">Cart (0)</button>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="maison">
+    <section class="hero" id="about">
       <div class="hero-copy">
-        <p class="eyebrow">Cartion | Since 1898</p>
-        <h1>Light sculpted in<br><span class="underline">white and black</span> reverie.</h1>
-        <p class="lede">Born from Parisian ateliers, Cartion shapes precious metals into modern heirlooms. Minimal lines, decisive contrasts, enduring radiance.</p>
+        <p class="eyebrow">NOMA Jewelry</p>
+        <h1>Timeless elegance,<br><span class="underline">crafted for you</span>.</h1>
+        <p class="lede">NOMA creates handcrafted fine jewelry with attention to every detail. Each piece tells a story of refined simplicity and enduring beauty.</p>
         <div class="hero-actions">
-          <button class="solid">Discover the Maison</button>
-          <button class="ghost">Explore Signatures</button>
+          <a href="products.html" style="text-decoration: none;"><button class="solid">Shop Collections</button></a>
+          <a href="#custom-engraving" style="text-decoration: none;"><button class="ghost">Custom Engraving</button></a>
         </div>
         <div class="hero-meta">
-          <span>Private viewings worldwide</span>
-          <span>Complimentary engraving</span>
-          <span>Responsible sourcing</span>
+          <span>Free Shipping</span>
+          <span>Complimentary Engraving</span>
+          <span>Ethically Sourced</span>
         </div>
       </div>
-      <div class="hero-visual" role="presentation" aria-hidden="true">
-        <div class="sketchfab-wrapper">
-          <iframe
-            title="Jewelry. Diamonds ring"
-            frameborder="0"
-            allowfullscreen
-            mozallowfullscreen="true"
-            webkitallowfullscreen="true"
-            allow="autoplay; fullscreen; xr-spatial-tracking"
-            xr-spatial-tracking
-            execution-while-out-of-viewport
-            execution-while-not-rendered
-            web-share
-            src="https://sketchfab.com/models/1ff3e6aac91342a0bab946c3dd740b08/embed?autostart=1&preload=1&transparent=1&ui_infos=0&ui_controls=0&ui_watermark=0&ui_stop=0&ui_hint=0&ui_fullscreen=0&ui_vr=0&ui_annotations=0&ui_ar=0&ui_general_controls=0&ui_color=ffffff">
-          </iframe>
-          <div class="sketchfab-mask" aria-hidden="true"></div>
+      <div class="hero-visual">
+        <div class="hero-static">
+          <img src="https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?auto=format&fit=crop&w=1200&q=80" alt="Gold ring with a gemstone" loading="lazy" />
         </div>
       </div>
     </section>
 
     <section class="section intro">
       <div class="section-header">
-        <p class="eyebrow">Maison Cartion</p>
-        <h2>Parisian rigor, luminous restraint.</h2>
+        <p class="eyebrow">About NOMA</p>
+        <h2>Where craftsmanship meets individuality.</h2>
       </div>
       <div class="split">
-        <p>Cartion reimagines heritage savoir-faire with a graphic, monochrome posture. Sculpted volumes, knife-edge facets, and mirror-bright settings echo the maison's devotion to clarity and balance.</p>
-        <p>Each creation is drafted in charcoal on vellum, cast in recycled precious metals, and set by hand. The result: objects that speak softly yet command the room.</p>
+        <p>NOMA jewelry is designed for those who appreciate the beauty of simplicity. Our collections feature clean lines, quality materials, and timeless designs that complement any style.</p>
+        <p>Each piece is carefully crafted using ethically sourced materials and traditional techniques. We believe jewelry should be as unique as the person wearing it.</p>
       </div>
     </section>
 
     <section class="section collections" id="collections">
       <div class="section-header">
-        <p class="eyebrow">Creations</p>
-        <h2>Signature lines in sharp relief.</h2>
+        <p class="eyebrow">Collections</p>
+        <h2>Discover our signature pieces.</h2>
       </div>
       <div class="card-grid">
         <article class="card">
@@ -92,9 +85,9 @@
           </div>
           <div class="card-body">
             <p class="eyebrow">Collection</p>
-            <h3>Éclat</h3>
-            <p>Knife-edge rings with mirror polish and black lacquer inlay. Designed to stack as luminous architecture.</p>
-            <button class="text-link">View line</button>
+            <h3>Classic Rings</h3>
+            <p>Elegant rings featuring timeless designs in gold and silver. Perfect for everyday wear or special occasions.</p>
+            <button class="text-link">Shop now</button>
           </div>
         </article>
         <article class="card">
@@ -104,9 +97,9 @@
           </div>
           <div class="card-body">
             <p class="eyebrow">Collection</p>
-            <h3>Noir Lumière</h3>
-            <p>Obsidian and diamond juxtapositions, suspended in tension-set silhouettes for weightless brilliance.</p>
-            <button class="text-link">View line</button>
+            <h3>Pendant Necklaces</h3>
+            <p>Delicate pendants crafted with precision. Each piece is designed to be a cherished keepsake.</p>
+            <button class="text-link">Shop now</button>
           </div>
         </article>
         <article class="card">
@@ -116,11 +109,60 @@
           </div>
           <div class="card-body">
             <p class="eyebrow">Collection</p>
-            <h3>Épure</h3>
-            <p>Fluid cuffs and chokers in sculpted white gold with negative space that lets skin become part of the design.</p>
-            <button class="text-link">View line</button>
+            <h3>Bracelets</h3>
+            <p>Sophisticated bracelets and cuffs that add a touch of elegance to any outfit.</p>
+            <button class="text-link">Shop now</button>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="section custom-engraving" id="custom-engraving">
+      <div class="section-header centered">
+        <p class="eyebrow">Personalize Your Jewelry</p>
+        <h2>Custom engraving for your special pieces.</h2>
+        <p class="centered-text">Add a personal touch to our bestselling pieces with complimentary custom engraving. Choose from a variety of fonts and add initials, dates, or meaningful messages.</p>
+      </div>
+      <div class="engraving-preview">
+        <div class="engraving-visual">
+          <div class="ring-preview">
+            <div class="ring-band"></div>
+            <div class="engraving-text">A & M</div>
+          </div>
+        </div>
+        <div class="engraving-controls">
+          <div class="control-group">
+            <label for="engraving-text">Your Message</label>
+            <input type="text" id="engraving-text" placeholder="Enter text (max 15 characters)" maxlength="15" />
+          </div>
+          <div class="control-group">
+            <label for="font-select">Font Style</label>
+            <select id="font-select">
+              <option>Classic Serif</option>
+              <option>Modern Sans</option>
+              <option>Script</option>
+              <option>Block</option>
+            </select>
+          </div>
+          <div class="bestsellers-grid">
+            <p class="eyebrow">Available on Bestsellers</p>
+            <div class="bestseller-items">
+              <div class="bestseller-card">
+                <div class="bestseller-visual"></div>
+                <p>Classic Band Ring</p>
+              </div>
+              <div class="bestseller-card">
+                <div class="bestseller-visual"></div>
+                <p>Signature Pendant</p>
+              </div>
+              <div class="bestseller-card">
+                <div class="bestseller-visual"></div>
+                <p>Simple Cuff</p>
+              </div>
+            </div>
+          </div>
+          <button class="solid">Add to Cart</button>
+        </div>
       </div>
     </section>
 
@@ -131,76 +173,76 @@
         <div class="shadow"></div>
       </div>
       <div class="signature-copy">
-        <p class="eyebrow">Signature Craft</p>
-        <h2>Facets cut to catch the quiet.</h2>
-        <p>Our ateliers balance precision micro-pavé with expansive planes of precious metal. The contrast amplifies light play while preserving a calm silhouette.</p>
+        <p class="eyebrow">Our Commitment</p>
+        <h2>Quality you can trust.</h2>
+        <p>Every NOMA piece is crafted with care using ethically sourced materials. We stand behind our work with a lifetime warranty on craftsmanship.</p>
         <div class="badges">
-          <span>GIA-certified stones</span>
-          <span>Recycled gold & platinum</span>
-          <span>Lifetime care</span>
+          <span>Ethically Sourced</span>
+          <span>Lifetime Warranty</span>
+          <span>Free Returns</span>
         </div>
         <div class="cta-row">
-          <button class="ghost">Savoir-Faire</button>
-          <button class="text-link">Request styling</button>
+          <button class="ghost">Learn More</button>
+          <button class="text-link">Customer Care</button>
         </div>
       </div>
     </section>
 
-    <section class="section craft" id="craft">
+    <section class="section craft">
       <div class="section-header">
-        <p class="eyebrow">Process</p>
-        <h2>Savoir-faire in four movements.</h2>
+        <p class="eyebrow">Craftsmanship</p>
+        <h2>Made with care, built to last.</h2>
       </div>
       <ol class="timeline">
         <li>
           <div>
             <p class="eyebrow">01</p>
-            <h3>Sketch & proportion</h3>
-            <p>Architectural sketches define balance, negative space, and how light will travel across each plane.</p>
+            <h3>Design</h3>
+            <p>Each piece starts with a careful design process, balancing aesthetics with wearability.</p>
           </div>
         </li>
         <li>
           <div>
             <p class="eyebrow">02</p>
-            <h3>Lost-wax casting</h3>
-            <p>Recycled precious metals are poured into precision molds for crisp edges and structural integrity.</p>
+            <h3>Sourcing</h3>
+            <p>We select only ethically sourced materials and work with trusted suppliers who share our values.</p>
           </div>
         </li>
         <li>
           <div>
             <p class="eyebrow">03</p>
-            <h3>Setting & polish</h3>
-            <p>Master setters secure stones with tension or micro-prongs; surfaces are polished to liquid mirror.</p>
+            <h3>Crafting</h3>
+            <p>Skilled artisans handcraft each piece using traditional techniques and modern precision.</p>
           </div>
         </li>
         <li>
           <div>
             <p class="eyebrow">04</p>
-            <h3>Final appraisal</h3>
-            <p>Each piece endures a 40-point inspection to certify brilliance, comfort, and lifelong endurance.</p>
+            <h3>Quality Check</h3>
+            <p>Every piece is inspected to ensure it meets our high standards before reaching you.</p>
           </div>
         </li>
       </ol>
     </section>
 
-    <section class="section appointment" id="appointment">
+    <section class="section appointment" id="contact">
       <div class="section-header">
-        <p class="eyebrow">Private Appointment</p>
-        <h2>Meet Cartion in person or online.</h2>
+        <p class="eyebrow">Get In Touch</p>
+        <h2>We're here to help.</h2>
       </div>
       <div class="appointment-card">
         <div class="appointment-copy">
-          <p>Schedule a private viewing in our salons or via secure video. Our advisors curate selections tailored to your wardrobe, celebrations, and legacy pieces.</p>
+          <p>Have questions about our jewelry or need help with an order? Our customer care team is ready to assist you via email, phone, or live chat.</p>
           <div class="pill-row">
-            <span>Paris</span>
-            <span>New York</span>
-            <span>Tokyo</span>
-            <span>Virtual</span>
+            <span>Email Support</span>
+            <span>Live Chat</span>
+            <span>Phone</span>
+            <span>FAQ</span>
           </div>
         </div>
         <div class="appointment-actions">
-          <button class="solid">Book now</button>
-          <button class="ghost">Concierge chat</button>
+          <button class="solid">Contact Us</button>
+          <button class="ghost">View FAQ</button>
         </div>
       </div>
     </section>
@@ -208,19 +250,20 @@
 
   <footer class="site-footer">
     <div class="footer-brand">
-      <span class="brand-mark">Cartion</span>
-      <p>Objects of quiet radiance.</p>
+      <span class="brand-mark">NOMA</span>
+      <p>Fine jewelry, crafted with care.</p>
     </div>
     <div class="footer-links">
-      <a href="#collections">Creations</a>
-      <a href="#maison">Maison</a>
-      <a href="#craft">Savoir-Faire</a>
-      <a href="#appointment">Appointments</a>
+      <a href="products.html">Shop All</a>
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#custom-engraving">Custom Engraving</a>
+      <a href="#contact">Contact</a>
     </div>
     <div class="footer-meta">
-      <span>© 2026 Cartion</span>
-      <span>Privacy</span>
-      <span>Care guide</span>
+      <span>© 2026 NOMA</span>
+      <span>Privacy Policy</span>
+      <span>Shipping & Returns</span>
     </div>
   </footer>
 
@@ -233,18 +276,27 @@
       nav.classList.toggle('open');
     });
 
-    const header = document.querySelector('.site-header');
-    const hero = document.querySelector('.hero');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+    // Custom engraving preview
+    const engravingInput = document.getElementById('engraving-text');
+    const fontSelect = document.getElementById('font-select');
+    const engravingDisplay = document.querySelector('.engraving-text');
+
+    if (engravingInput && engravingDisplay) {
+      engravingInput.addEventListener('input', (e) => {
+        const text = e.target.value || 'A & M';
+        engravingDisplay.textContent = text;
       });
-    }, { threshold: 0.1 });
-    observer.observe(hero);
+
+      fontSelect.addEventListener('change', (e) => {
+        const fonts = {
+          'Classic Serif': "'Cormorant Garamond', serif",
+          'Modern Sans': "'Manrope', sans-serif",
+          'Script': "'Dancing Script', cursive",
+          'Block': "'Arial Black', sans-serif"
+        };
+        engravingDisplay.style.fontFamily = fonts[e.target.value];
+      });
+    }
   </script>
 </body>
 </html>
