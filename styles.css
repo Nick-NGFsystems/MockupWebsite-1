@@ -336,9 +336,24 @@ p {
 }
 
 .cart-drawer-toggle {
-  font-size: 0.9rem;
+  width: 16px;
+  height: 16px;
+  position: relative;
   color: var(--muted);
   transition: transform 160ms ease;
+  font-size: 0;
+}
+
+.cart-drawer-toggle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
 }
 
 .cart-drawer.is-collapsed .cart-drawer-toggle {
