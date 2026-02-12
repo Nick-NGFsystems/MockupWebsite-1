@@ -42,6 +42,16 @@
 
   <div class="nav-overlay" aria-hidden="true"></div>
 
+  <aside class="cart-drawer" aria-live="polite" aria-label="Mini cart">
+    <div class="cart-drawer-header">
+      <h3>Cart</h3>
+      <span class="cart-count">0 items</span>
+    </div>
+    <div class="cart-drawer-list" id="cartDrawerList">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+  </aside>
+
   <main>
     <section class="section home-hero" id="home">
       <div class="hero-copy">
@@ -67,7 +77,7 @@
         <h2>Our most-loved pieces.</h2>
       </div>
       <div class="mini-grid">
-        <a class="mini-card" href="products.html#gold-ring">
+        <a class="mini-card" href="products.html#gold-ring" data-product="gold-ring" data-category="Rings">
           <div class="mini-image">
             <img src="https://t4.ftcdn.net/jpg/01/62/16/95/240_F_162169546_TXWbzLVtl8xPHS6kQhCZpXn5eAcseKdy.jpg" alt="Gold ring" loading="lazy" decoding="async" />
           </div>
@@ -81,7 +91,7 @@
             </div>
           </div>
         </a>
-        <a class="mini-card" href="products.html#gold-earrings">
+        <a class="mini-card" href="products.html#gold-earrings" data-product="gold-earrings" data-category="Earrings">
           <div class="mini-image">
             <img src="https://t3.ftcdn.net/jpg/04/91/84/06/240_F_491840698_kRThIl1magryzzojHMeQh6oa2t0aOHEG.jpg" alt="Gold earrings" loading="lazy" decoding="async" />
           </div>
@@ -95,7 +105,7 @@
             </div>
           </div>
         </a>
-        <a class="mini-card" href="products.html#pearl-necklace">
+        <a class="mini-card" href="products.html#pearl-necklace" data-product="pearl-necklace" data-category="Necklaces">
           <div class="mini-image">
             <img src="https://t3.ftcdn.net/jpg/01/96/38/18/240_F_196381885_sNQQNy1AgocHkT0ksEoZxGqkSZsfU7kD.jpg" alt="Pearl necklace" loading="lazy" decoding="async" />
           </div>
@@ -109,7 +119,7 @@
             </div>
           </div>
         </a>
-        <a class="mini-card" href="products.html#gold-bracelet">
+        <a class="mini-card" href="products.html#gold-bracelet" data-product="gold-bracelet" data-category="Bracelets">
           <div class="mini-image">
             <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D" alt="Gold bracelet" loading="lazy" decoding="async" />
           </div>
@@ -123,7 +133,7 @@
             </div>
           </div>
         </a>
-        <a class="mini-card" href="products.html#silver-earring">
+        <a class="mini-card" href="products.html#silver-earring" data-product="silver-earring" data-category="Earrings">
           <div class="mini-image">
             <img src="https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D" alt="Silver earring" loading="lazy" decoding="async" />
           </div>
@@ -137,7 +147,7 @@
             </div>
           </div>
         </a>
-        <a class="mini-card" href="products.html#pearl-gold-earring">
+        <a class="mini-card" href="products.html#pearl-gold-earring" data-product="pearl-gold-earring" data-category="Earrings">
           <div class="mini-image">
             <img src="https://images.unsplash.com/photo-1590166223826-12dee1677420?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D" alt="Gold earring with a pearl" loading="lazy" decoding="async" />
           </div>
@@ -152,6 +162,9 @@
           </div>
         </a>
       </div>
+      <div class="section-actions">
+        <a class="button-link solid" href="products.html">Go to shop</a>
+      </div>
     </section>
 
     <section class="section collections-tiles" id="collections">
@@ -162,7 +175,7 @@
       <div class="category-groups">
         <div class="category-group">
           <p class="eyebrow">Metals</p>
-          <div class="category-grid">
+          <div class="category-list">
             <a class="category-pill" href="products.html?material=Gold">Gold</a>
             <a class="category-pill" href="products.html?material=Silver">Silver</a>
             <a class="category-pill" href="products.html?material=Pearl">Pearl</a>
@@ -172,7 +185,7 @@
         </div>
         <div class="category-group">
           <p class="eyebrow">Types</p>
-          <div class="category-grid">
+          <div class="category-list">
             <a class="category-pill" href="products.html?category=Necklaces">Necklaces</a>
             <a class="category-pill" href="products.html?category=Earrings">Earrings</a>
             <a class="category-pill" href="products.html?category=Bracelets">Bracelets</a>
@@ -286,6 +299,28 @@
     </div>
   </footer>
 
+  <!-- Product Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-visual">
+          <div class="modal-placeholder"></div>
+        </div>
+        <div class="modal-info">
+          <h2 id="modalTitle"></h2>
+          <p class="product-category" id="modalCategory"></p>
+          <p class="product-price" id="modalPrice"></p>
+          <p id="modalDescription"></p>
+          <div class="modal-actions">
+            <button class="solid add-to-cart">Add to Cart</button>
+            <button class="ghost">Add Custom Engraving</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
@@ -326,7 +361,21 @@
     }
 
     navLinks.forEach((link) => {
-      link.addEventListener('click', () => closeNav());
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href') || '';
+        if (href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            event.preventDefault();
+            closeNav();
+            const block = href === '#reviews' ? 'center' : 'start';
+            target.scrollIntoView({ behavior: 'smooth', block });
+            return;
+          }
+        }
+
+        closeNav();
+      });
     });
 
     navOverlay?.addEventListener('click', () => closeNav());
@@ -335,6 +384,264 @@
     });
     window.addEventListener('resize', setMenuOffset);
     setMenuOffset();
+
+    const setActiveNavLink = (sectionId) => {
+      navLinks.forEach((link) => {
+        const href = link.getAttribute('href') || '';
+        const hashIndex = href.indexOf('#');
+        let targetId = null;
+
+        if (hashIndex !== -1) {
+          const hash = href.slice(hashIndex);
+          targetId = hash === '#top' ? 'home' : hash.replace('#', '');
+        }
+
+        const isActive = Boolean(sectionId && targetId === sectionId);
+        link.classList.toggle('active', isActive);
+        if (isActive) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    const modal = document.getElementById('productModal');
+    const modalClose = document.querySelector('.modal-close');
+    const modalVisual = document.querySelector('.modal-visual');
+    const miniCards = document.querySelectorAll('.mini-card');
+    const addToCartButton = document.querySelector('.add-to-cart');
+    const cartDrawer = document.querySelector('.cart-drawer');
+    const cartDrawerList = document.getElementById('cartDrawerList');
+    const cartCountLabel = document.querySelector('.cart-count');
+    const headerCartButton = document.querySelector('.header-actions .solid');
+    const cartStorageKey = 'nomaCart';
+    let currentModalItem = null;
+
+    const loadCart = () => {
+      try {
+        return JSON.parse(localStorage.getItem(cartStorageKey)) || [];
+      } catch (error) {
+        return [];
+      }
+    };
+
+    const parsePrice = (price) => {
+      if (!price) return 0;
+      const value = Number(price.replace(/[^0-9.]/g, ''));
+      return Number.isNaN(value) ? 0 : value;
+    };
+
+    const saveCart = (cart) => {
+      try {
+        localStorage.setItem(cartStorageKey, JSON.stringify(cart));
+      } catch (error) {
+        // Ignore write errors for simple demo behavior.
+      }
+    };
+
+    const updateCartUI = (cart) => {
+      if (!cartDrawerList || !cartCountLabel || !cartDrawer) return;
+      cartDrawerList.innerHTML = '';
+
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartCountLabel.textContent = `${totalQty} item${totalQty === 1 ? '' : 's'}`;
+      if (headerCartButton) headerCartButton.textContent = `Cart (${totalQty})`;
+
+      if (!totalQty) {
+        cartDrawer.style.display = 'none';
+      } else {
+        cartDrawer.style.display = 'flex';
+      }
+
+      if (!cart.length) return;
+
+      const subtotal = cart.reduce((sum, item) => sum + parsePrice(item.price) * item.qty, 0);
+      const subtotalRow = document.createElement('div');
+      subtotalRow.className = 'cart-drawer-total';
+      const subtotalLabel = document.createElement('span');
+      subtotalLabel.textContent = 'Subtotal';
+      const subtotalValue = document.createElement('span');
+      subtotalValue.textContent = `$${subtotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+      subtotalRow.appendChild(subtotalLabel);
+      subtotalRow.appendChild(subtotalValue);
+      cartDrawerList.appendChild(subtotalRow);
+
+      cart.forEach((item) => {
+        const row = document.createElement('div');
+        row.className = 'cart-item-mini';
+
+        const img = document.createElement('img');
+        img.src = item.image || '';
+        img.alt = item.title || 'Cart item';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+
+        const info = document.createElement('div');
+        info.className = 'cart-item-info';
+
+        const title = document.createElement('h4');
+        title.textContent = item.title || 'Item';
+
+        const meta = document.createElement('div');
+        meta.className = 'cart-item-meta';
+
+        const price = document.createElement('span');
+        price.textContent = item.price || '';
+
+        const qtyWrap = document.createElement('div');
+        qtyWrap.className = 'cart-qty-controls';
+
+        const minus = document.createElement('button');
+        minus.type = 'button';
+        minus.className = 'cart-qty-button';
+        minus.textContent = '-';
+        minus.setAttribute('data-action', 'decrement');
+        minus.setAttribute('data-id', item.id);
+
+        const qty = document.createElement('span');
+        qty.className = 'cart-item-qty';
+        qty.textContent = `x${item.qty}`;
+
+        const plus = document.createElement('button');
+        plus.type = 'button';
+        plus.className = 'cart-qty-button';
+        plus.textContent = '+';
+        plus.setAttribute('data-action', 'increment');
+        plus.setAttribute('data-id', item.id);
+
+        qtyWrap.appendChild(minus);
+        qtyWrap.appendChild(qty);
+        qtyWrap.appendChild(plus);
+
+        meta.appendChild(price);
+        meta.appendChild(qtyWrap);
+        info.appendChild(title);
+        info.appendChild(meta);
+        row.appendChild(img);
+        row.appendChild(info);
+        cartDrawerList.appendChild(row);
+      });
+    };
+
+    const addToCart = (item) => {
+      if (!item || !item.id) return;
+      const cart = loadCart();
+      const existing = cart.find((entry) => entry.id === item.id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...item, qty: 1 });
+      }
+      saveCart(cart);
+      updateCartUI(cart);
+    };
+
+    const updateCartItemQty = (id, delta) => {
+      const cart = loadCart();
+      const item = cart.find((entry) => entry.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        const nextCart = cart.filter((entry) => entry.id !== id);
+        saveCart(nextCart);
+        updateCartUI(nextCart);
+        return;
+      }
+      saveCart(cart);
+      updateCartUI(cart);
+    };
+
+    if (modal) {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    const closeModal = () => {
+      if (!modal) return;
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = 'auto';
+      if (modalVisual) modalVisual.innerHTML = '<div class="modal-placeholder"></div>';
+    };
+
+    const openModal = (card) => {
+      if (!modal || !card) return;
+      const title = card.querySelector('h3')?.textContent?.trim() || '';
+      const description = card.querySelector('.mini-body p:not(.eyebrow)')?.textContent?.trim() || '';
+      const price = card.querySelector('.price')?.textContent?.trim() || '';
+      const category = card.dataset.category || '';
+      const productId = card.dataset.product || title.toLowerCase().replace(/\s+/g, '-');
+      const image = card.querySelector('img');
+
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalCategory').textContent = category;
+      document.getElementById('modalPrice').textContent = price;
+      document.getElementById('modalDescription').textContent = description;
+
+      if (modalVisual) {
+        modalVisual.innerHTML = '';
+        if (image?.src) {
+          const img = document.createElement('img');
+          img.className = 'modal-product-image';
+          img.src = image.src;
+          img.alt = image.alt || title;
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          modalVisual.appendChild(img);
+        } else {
+          const placeholder = document.createElement('div');
+          placeholder.className = 'modal-placeholder-img';
+          modalVisual.appendChild(placeholder);
+        }
+      }
+
+      currentModalItem = {
+        id: productId,
+        title,
+        price,
+        image: image?.src || ''
+      };
+
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    miniCards.forEach((card) => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (event) => {
+        event.preventDefault();
+        openModal(card);
+      });
+    });
+
+    modalClose?.addEventListener('click', closeModal);
+
+    addToCartButton?.addEventListener('click', () => {
+      addToCart(currentModalItem);
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    window.addEventListener('keyup', (event) => {
+      if (event.key === 'Escape' && modal?.style.display === 'flex') {
+        closeModal();
+      }
+    });
+
+    cartDrawerList?.addEventListener('click', (event) => {
+      const button = event.target.closest('.cart-qty-button');
+      if (!button) return;
+      const id = button.getAttribute('data-id');
+      const action = button.getAttribute('data-action');
+      if (!id || !action) return;
+      updateCartItemQty(id, action === 'increment' ? 1 : -1);
+    });
+
+    updateCartUI(loadCart());
 
     let focusTicking = false;
     let currentFocus = null;
@@ -364,6 +671,7 @@
       });
 
       currentFocus = closestSection;
+      setActiveNavLink(closestSection?.id);
     };
 
     const requestFocusUpdate = () => {
