@@ -482,6 +482,7 @@ p {
   line-height: 1;
   cursor: pointer;
   transition: transform 140ms ease, box-shadow 140ms ease;
+  touch-action: manipulation;
 }
 
 .cart-qty-button:hover {
