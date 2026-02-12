@@ -745,6 +745,16 @@ main {
   align-items: baseline;
 }
 
+.sale-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  background: var(--burgundy);
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
 .price {
   font-size: 1.1rem;
   font-weight: 700;

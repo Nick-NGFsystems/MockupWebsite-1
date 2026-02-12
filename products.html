@@ -104,7 +104,11 @@
           <div class="product-info">
             <h3>Gold Ring</h3>
             <p class="product-category">Rings</p>
-            <p class="product-price">$450</p>
+            <div class="price-row">
+              <span class="price">$49</span>
+              <span class="price-compare">$69</span>
+              <span class="sale-tag">Sale</span>
+            </div>
           </div>
         </article>
 
@@ -115,7 +119,9 @@
           <div class="product-info">
             <h3>Gold Earrings</h3>
             <p class="product-category">Earrings</p>
-            <p class="product-price">$320</p>
+            <div class="price-row">
+              <span class="price">$44</span>
+            </div>
           </div>
         </article>
 
@@ -126,7 +132,11 @@
           <div class="product-info">
             <h3>Pearl Necklace</h3>
             <p class="product-category">Necklaces</p>
-            <p class="product-price">$680</p>
+            <div class="price-row">
+              <span class="price">$55</span>
+              <span class="price-compare">$72</span>
+              <span class="sale-tag">Sale</span>
+            </div>
           </div>
         </article>
 
@@ -137,7 +147,9 @@
           <div class="product-info">
             <h3>Moon Necklace</h3>
             <p class="product-category">Necklaces</p>
-            <p class="product-price">$850</p>
+            <div class="price-row">
+              <span class="price">$65</span>
+            </div>
           </div>
         </article>
 
@@ -148,7 +160,11 @@
           <div class="product-info">
             <h3>Gold Bracelet</h3>
             <p class="product-category">Bracelets</p>
-            <p class="product-price">$580</p>
+            <div class="price-row">
+              <span class="price">$52</span>
+              <span class="price-compare">$63</span>
+              <span class="sale-tag">Sale</span>
+            </div>
           </div>
         </article>
 
@@ -159,7 +175,9 @@
           <div class="product-info">
             <h3>Silver Earring</h3>
             <p class="product-category">Earrings</p>
-            <p class="product-price">$280</p>
+            <div class="price-row">
+              <span class="price">$39</span>
+            </div>
           </div>
         </article>
 
@@ -170,7 +188,9 @@
           <div class="product-info">
             <h3>Gold Earring with a Pearl</h3>
             <p class="product-category">Earrings</p>
-            <p class="product-price">$520</p>
+            <div class="price-row">
+              <span class="price">$59</span>
+            </div>
           </div>
         </article>
       </div>
@@ -470,7 +490,7 @@
         'gold-ring': {
           title: 'Gold Ring',
           category: 'Rings',
-          price: '$450',
+          price: '$49',
           description: 'Classic gold ring with a polished finish and a refined silhouette.',
           has3d: true,
           image: 'https://t4.ftcdn.net/jpg/01/62/16/95/240_F_162169546_TXWbzLVtl8xPHS6kQhCZpXn5eAcseKdy.jpg'
@@ -478,7 +498,7 @@
         'gold-earrings': {
           title: 'Gold Earrings',
           category: 'Earrings',
-          price: '$320',
+          price: '$44',
           description: 'Warm gold earrings that add a refined glow to any look.',
           has3d: true,
           image: 'https://t3.ftcdn.net/jpg/04/91/84/06/240_F_491840698_kRThIl1magryzzojHMeQh6oa2t0aOHEG.jpg'
@@ -486,7 +506,7 @@
         'pearl-necklace': {
           title: 'Pearl Necklace',
           category: 'Necklaces',
-          price: '$680',
+          price: '$55',
           description: 'Classic pearls with a soft, luminous sheen for timeless layering.',
           has3d: true,
           image: 'https://t3.ftcdn.net/jpg/01/96/38/18/240_F_196381885_sNQQNy1AgocHkT0ksEoZxGqkSZsfU7kD.jpg'
@@ -494,7 +514,7 @@
         'moon-necklace': {
           title: 'Moon Necklace',
           category: 'Necklaces',
-          price: '$850',
+          price: '$65',
           description: 'A moon pendant necklace with a delicate, celestial charm.',
           has3d: true,
           image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8amV3ZWxyeXxlbnwwfHwwfHx8MA%3D%3D'
@@ -502,7 +522,7 @@
         'gold-bracelet': {
           title: 'Gold Bracelet',
           category: 'Bracelets',
-          price: '$580',
+          price: '$52',
           description: 'Sleek gold bracelet designed for everyday polish.',
           has3d: true,
           image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
@@ -510,7 +530,7 @@
         'silver-earring': {
           title: 'Silver Earring',
           category: 'Earrings',
-          price: '$280',
+          price: '$39',
           description: 'Minimal silver earring with a clean, modern finish.',
           has3d: true,
           image: 'https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
@@ -518,7 +538,7 @@
         'pearl-gold-earring': {
           title: 'Gold Earring with a Pearl',
           category: 'Earrings',
-          price: '$520',
+          price: '$59',
           description: 'Gold earring finished with a luminous pearl accent.',
           has3d: true,
           image: 'https://images.unsplash.com/photo-1590166223826-12dee1677420?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
