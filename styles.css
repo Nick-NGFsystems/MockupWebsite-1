@@ -254,7 +254,30 @@ main {
 .section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 0;
+  padding: 72px 32px;
+  position: relative;
+}
+
+.section + .section {
+  margin-top: 24px;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100%, 1200px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(139, 47, 57, 0.35), rgba(0, 0, 0, 0));
+}
+
+.section:nth-of-type(even):not(.custom-engraving) {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
 }
 
 .section-header {
@@ -1020,7 +1043,7 @@ main {
 @media (max-width: 640px) {
   main { padding: 60px 20px 100px; }
   .hero { padding: 60px 0 40px; }
-  .section { padding: 48px 0; }
+  .section { padding: 48px 20px; }
   .site-header { padding: 14px 20px; }
   .site-header {
     gap: 10px;
