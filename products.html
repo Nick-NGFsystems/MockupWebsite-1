@@ -289,7 +289,8 @@
     const cartDrawerList = document.getElementById('cartDrawerList');
     const cartCountLabel = document.querySelector('.cart-count');
     const cartDrawerHeader = document.querySelector('.cart-drawer-header');
-    const cartDrawerMedia = window.matchMedia('(max-width: 640px)');
+    const cartDrawerMedia = window.matchMedia('(max-width: 1024px)');
+    let cartDrawerExpanded = false;
     const headerCartButton = document.querySelector('.header-actions .solid');
     const cartStorageKey = 'nomaCart';
 
@@ -322,13 +323,9 @@
 
     const setCartDrawerMode = () => {
       if (!cartDrawer) return;
-      if (cartDrawerMedia.matches && cartDrawer.style.display !== 'none') {
-        cartDrawer.classList.add('is-collapsed');
-        setCartDrawerExpanded(false);
-      } else {
-        cartDrawer.classList.remove('is-collapsed');
-        setCartDrawerExpanded(true);
-      }
+      if (cartDrawer.style.display === 'none') return;
+      cartDrawer.classList.toggle('is-collapsed', !cartDrawerExpanded);
+      setCartDrawerExpanded(cartDrawerExpanded);
     };
 
     const updateCartUI = (cart) => {
@@ -646,15 +643,14 @@
       });
 
       const toggleCartDrawer = () => {
-        if (!cartDrawerMedia.matches) return;
         const isCollapsed = cartDrawer.classList.toggle('is-collapsed');
-        setCartDrawerExpanded(!isCollapsed);
+        cartDrawerExpanded = !isCollapsed;
+        setCartDrawerExpanded(cartDrawerExpanded);
       };
 
       cartDrawerHeader?.addEventListener('click', toggleCartDrawer);
 
       cartDrawerHeader?.addEventListener('keydown', (event) => {
-        if (!cartDrawerMedia.matches) return;
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           toggleCartDrawer();
