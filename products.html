@@ -334,6 +334,7 @@
         img.src = product.image;
         img.alt = product.title;
         img.loading = 'lazy';
+        img.decoding = 'async';
         imageWrap.appendChild(img);
       });
 
@@ -371,6 +372,7 @@
           img.src = product.image;
           img.alt = product.title;
           img.loading = 'lazy';
+          img.decoding = 'async';
           modalVisual.appendChild(img);
         } else {
           const placeholder = document.createElement('div');
@@ -410,6 +412,9 @@
         }
       });
 
+      let focusTicking = false;
+      let currentFocus = null;
+
       const updateFocusedSection = () => {
         const sections = Array.from(document.querySelectorAll('.section'));
         if (!sections.length) return;
@@ -428,13 +433,26 @@
           }
         });
 
+        if (closestSection === currentFocus) return;
+
         sections.forEach((section) => {
           section.classList.toggle('in-focus', section === closestSection);
         });
+
+        currentFocus = closestSection;
       };
 
-      window.addEventListener('scroll', updateFocusedSection, { passive: true });
-      window.addEventListener('resize', updateFocusedSection);
+      const requestFocusUpdate = () => {
+        if (focusTicking) return;
+        focusTicking = true;
+        requestAnimationFrame(() => {
+          focusTicking = false;
+          updateFocusedSection();
+        });
+      };
+
+      window.addEventListener('scroll', requestFocusUpdate, { passive: true });
+      window.addEventListener('resize', requestFocusUpdate);
       updateFocusedSection();
   </script>
 </body>

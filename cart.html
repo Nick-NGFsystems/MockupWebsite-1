@@ -16,7 +16,7 @@
   <header class="site-header">
     <div class="brand">
       <a href="index.html" style="text-decoration: none; color: inherit;">
-        <img class="brand-logo" src="assets/logos/noma-logo-primary.png" alt="NOMA Fine Jewelry" />
+        <img class="brand-logo" src="assets/logos/noma-logo-primary.png" alt="NOMA Fine Jewelry" decoding="async" />
         <span class="sr-only">NOMA Fine Jewelry</span>
       </a>
     </div>
@@ -51,7 +51,7 @@
         <div class="cart-items">
           <article class="cart-item">
             <div class="cart-thumb">
-              <img src="https://t4.ftcdn.net/jpg/01/62/16/95/240_F_162169546_TXWbzLVtl8xPHS6kQhCZpXn5eAcseKdy.jpg" alt="Gold ring" loading="lazy" />
+              <img src="https://t4.ftcdn.net/jpg/01/62/16/95/240_F_162169546_TXWbzLVtl8xPHS6kQhCZpXn5eAcseKdy.jpg" alt="Gold ring" loading="lazy" decoding="async" />
             </div>
             <div class="cart-details">
               <h3>Gold Ring</h3>
@@ -64,7 +64,7 @@
           </article>
           <article class="cart-item">
             <div class="cart-thumb">
-              <img src="https://t3.ftcdn.net/jpg/01/96/38/18/240_F_196381885_sNQQNy1AgocHkT0ksEoZxGqkSZsfU7kD.jpg" alt="Pearl necklace" loading="lazy" />
+              <img src="https://t3.ftcdn.net/jpg/01/96/38/18/240_F_196381885_sNQQNy1AgocHkT0ksEoZxGqkSZsfU7kD.jpg" alt="Pearl necklace" loading="lazy" decoding="async" />
             </div>
             <div class="cart-details">
               <h3>Pearl Necklace</h3>
@@ -99,7 +99,7 @@
 
   <footer class="site-footer">
     <div class="footer-brand">
-      <img class="footer-logo" src="assets/logos/noma-logo-alt.png" alt="NOMA Fine Jewelry" />
+      <img class="footer-logo" src="assets/logos/noma-logo-alt.png" alt="NOMA Fine Jewelry" decoding="async" />
       <p>Fine jewelry, crafted with care.</p>
     </div>
     <div class="footer-links">
@@ -166,6 +166,9 @@
     window.addEventListener('resize', setMenuOffset);
     setMenuOffset();
 
+    let focusTicking = false;
+    let currentFocus = null;
+
     const updateFocusedSection = () => {
       const sections = Array.from(document.querySelectorAll('.section'));
       if (!sections.length) return;
@@ -184,13 +187,26 @@
         }
       });
 
+      if (closestSection === currentFocus) return;
+
       sections.forEach((section) => {
         section.classList.toggle('in-focus', section === closestSection);
       });
+
+      currentFocus = closestSection;
     };
 
-    window.addEventListener('scroll', updateFocusedSection, { passive: true });
-    window.addEventListener('resize', updateFocusedSection);
+    const requestFocusUpdate = () => {
+      if (focusTicking) return;
+      focusTicking = true;
+      requestAnimationFrame(() => {
+        focusTicking = false;
+        updateFocusedSection();
+      });
+    };
+
+    window.addEventListener('scroll', requestFocusUpdate, { passive: true });
+    window.addEventListener('resize', requestFocusUpdate);
     updateFocusedSection();
   </script>
 </body>
