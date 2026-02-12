@@ -56,6 +56,8 @@
             <option>Necklaces</option>
             <option>Bracelets</option>
             <option>Earrings</option>
+            <option>Anklets</option>
+            <option>Gifts</option>
           </select>
         </div>
         <div class="filter-group">
@@ -65,6 +67,8 @@
             <option>Gold</option>
             <option>Silver</option>
             <option>Rose Gold</option>
+            <option>Pearl</option>
+            <option>Diamond</option>
             <option>Platinum</option>
           </select>
         </div>
@@ -253,6 +257,30 @@
     });
     window.addEventListener('resize', setMenuOffset);
     setMenuOffset();
+
+      const applyFiltersFromQuery = () => {
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get('category');
+        const material = params.get('material');
+        const categorySelect = document.getElementById('category');
+        const materialSelect = document.getElementById('material');
+
+        if (category && categorySelect) {
+          const hasCategory = Array.from(categorySelect.options).some(
+            (option) => option.value === category
+          );
+          if (hasCategory) categorySelect.value = category;
+        }
+
+        if (material && materialSelect) {
+          const hasMaterial = Array.from(materialSelect.options).some(
+            (option) => option.value === material
+          );
+          if (hasMaterial) materialSelect.value = material;
+        }
+      };
+
+      applyFiltersFromQuery();
 
       // Product data
       const productData = {
