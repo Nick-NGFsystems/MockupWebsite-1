@@ -579,7 +579,9 @@
       modal.style.display = 'none';
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = 'auto';
+      document.body.classList.remove('modal-open');
       if (modalVisual) modalVisual.innerHTML = '<div class="modal-placeholder"></div>';
+      updateCartUI(loadCart());
     };
 
     const openModal = (card) => {
@@ -623,6 +625,7 @@
       modal.style.display = 'flex';
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
     };
 
     miniCards.forEach((card) => {
@@ -648,6 +651,7 @@
         closeModal();
       }
     });
+
 
     const toggleCartDrawer = () => {
       const isCollapsed = cartDrawer.classList.toggle('is-collapsed');

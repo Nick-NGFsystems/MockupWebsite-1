@@ -316,6 +316,12 @@ p {
   z-index: 1105;
 }
 
+@media (max-width: 1900px) {
+  .cart-drawer {
+    z-index: 900;
+  }
+}
+
 .cart-drawer.is-collapsed {
   width: auto;
   max-height: none;
@@ -326,6 +332,7 @@ p {
 .cart-drawer.is-collapsed .cart-drawer-list {
   display: none;
 }
+
 
 .cart-drawer-header {
   display: flex;
