@@ -377,6 +377,12 @@
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = 'auto';
         if (modalVisual) modalVisual.innerHTML = '<div class="modal-placeholder"></div>';
+        if (window.location.hash) {
+          const hashTarget = document.querySelector(window.location.hash);
+          if (hashTarget && hashTarget.classList.contains('product-card')) {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+        }
       };
 
       const openModal = (card) => {
