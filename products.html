@@ -11,13 +11,13 @@
 </head>
 <body>
   <div class="announcement-banner">
-    <p>Free Shipping on All Orders | Complimentary Engraving Available</p>
+    <p>Complimentary shipping over $100 | Personalization available</p>
   </div>
   <header class="site-header">
     <div class="brand">
       <a href="index.html" style="text-decoration: none; color: inherit;">
-        <span class="brand-mark">NOMA</span>
-        <span class="brand-tag">Fine Jewelry</span>
+        <img class="brand-logo" src="assets/logos/noma-logo-primary.png" alt="NOMA Fine Jewelry" />
+        <span class="sr-only">NOMA Fine Jewelry</span>
       </a>
     </div>
     <nav class="nav" aria-label="Primary">
@@ -25,26 +25,27 @@
         <span></span><span></span>
       </button>
       <ul class="nav-links" id="primary-nav">
-        <li><a href="products.html">Shop All</a></li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#custom-engraving">Custom Engraving</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li class="nav-home"><a href="index.html#top">Home</a></li>
+        <li class="nav-best"><a href="index.html#best-sellers">Best Sellers</a></li>
+        <li class="nav-collections"><a href="index.html#collections">Collections</a></li>
+        <li class="nav-reviews"><a href="index.html#reviews">Reviews</a></li>
+        <li class="nav-bundles"><a href="index.html#bundles">Bundles</a></li>
+        <li class="nav-story"><a href="index.html#founder">Our Story</a></li>
+        <li class="nav-shop"><a href="products.html">Shop All</a></li>
       </ul>
     </nav>
     <div class="header-actions">
-      <button class="ghost">Search</button>
-      <button class="solid">Cart (0)</button>
+      <a href="cart.html" style="text-decoration: none;"><button class="solid">Cart (0)</button></a>
     </div>
   </header>
 
   <div class="nav-overlay" aria-hidden="true"></div>
 
   <main>
-    <section class="products-hero">
+    <section class="section products-hero">
       <div class="products-header">
-        <h1>Shop All Jewelry</h1>
-        <p class="lede">Discover our complete collection of handcrafted fine jewelry. Each piece is designed to be treasured for a lifetime.</p>
+        <h1>The NOMA Edit</h1>
+        <p class="lede">A curated selection of refined essentials designed to layer, gift, and keep.</p>
       </div>
       <div class="filter-bar">
         <div class="filter-group">
@@ -79,141 +80,82 @@
       </div>
     </section>
 
-    <section class="products-grid-section">
+    <section class="section products-grid-section">
       <div class="products-grid">
-        <!-- Ring Products -->
-        <article class="product-card" data-product="classic-gold-band" data-has-3d="true">
+        <article class="product-card" id="gold-ring" data-product="gold-ring" data-has-3d="true">
           <div class="product-image">
             <div class="placeholder-ring"></div>
           </div>
           <div class="product-info">
-            <h3>Classic Gold Band</h3>
+            <h3>Gold Ring</h3>
             <p class="product-category">Rings</p>
             <p class="product-price">$450</p>
           </div>
         </article>
 
-        <article class="product-card" data-product="diamond-solitaire" data-has-3d="true">
+        <article class="product-card" id="gold-earrings" data-product="gold-earrings" data-has-3d="true">
           <div class="product-image">
             <div class="placeholder-ring variant-2"></div>
           </div>
           <div class="product-info">
-            <h3>Diamond Solitaire Ring</h3>
-            <p class="product-category">Rings</p>
-            <p class="product-price">$1,850</p>
-          </div>
-        </article>
-
-        <article class="product-card" data-product="stackable-silver" data-has-3d="false">
-          <div class="product-image">
-            <div class="placeholder-ring variant-3"></div>
-          </div>
-          <div class="product-info">
-            <h3>Stackable Silver Band</h3>
-            <p class="product-category">Rings</p>
+            <h3>Gold Earrings</h3>
+            <p class="product-category">Earrings</p>
             <p class="product-price">$320</p>
           </div>
         </article>
 
-        <!-- Necklace Products -->
-        <article class="product-card" data-product="pearl-drop" data-has-3d="true">
+        <article class="product-card" id="pearl-necklace" data-product="pearl-necklace" data-has-3d="true">
           <div class="product-image dark">
             <div class="placeholder-pendant"></div>
           </div>
           <div class="product-info">
-            <h3>Pearl Drop Pendant</h3>
+            <h3>Pearl Necklace</h3>
             <p class="product-category">Necklaces</p>
             <p class="product-price">$680</p>
           </div>
         </article>
 
-        <article class="product-card" data-product="diamond-pendant" data-has-3d="false">
+        <article class="product-card" id="moon-necklace" data-product="moon-necklace" data-has-3d="true">
           <div class="product-image dark">
             <div class="placeholder-pendant variant-2"></div>
           </div>
           <div class="product-info">
-            <h3>Diamond Pendant</h3>
-            <p class="product-category">Necklaces</p>
-            <p class="product-price">$1,250</p>
-          </div>
-        </article>
-
-        <article class="product-card" data-product="gold-chain" data-has-3d="false">
-          <div class="product-image dark">
-            <div class="placeholder-pendant variant-3"></div>
-          </div>
-          <div class="product-info">
-            <h3>Gold Chain Necklace</h3>
+            <h3>Moon Necklace</h3>
             <p class="product-category">Necklaces</p>
             <p class="product-price">$850</p>
           </div>
         </article>
 
-        <!-- Bracelet Products -->
-        <article class="product-card" data-product="elegant-cuff" data-has-3d="true">
+        <article class="product-card" id="gold-bracelet" data-product="gold-bracelet" data-has-3d="true">
           <div class="product-image">
             <div class="placeholder-bracelet"></div>
           </div>
           <div class="product-info">
-            <h3>Elegant Cuff Bracelet</h3>
+            <h3>Gold Bracelet</h3>
             <p class="product-category">Bracelets</p>
             <p class="product-price">$580</p>
           </div>
         </article>
 
-        <article class="product-card" data-product="chain-link" data-has-3d="false">
+        <article class="product-card" id="silver-earring" data-product="silver-earring" data-has-3d="true">
           <div class="product-image">
             <div class="placeholder-bracelet variant-2"></div>
           </div>
           <div class="product-info">
-            <h3>Chain Link Bracelet</h3>
-            <p class="product-category">Bracelets</p>
-            <p class="product-price">$720</p>
+            <h3>Silver Earring</h3>
+            <p class="product-category">Earrings</p>
+            <p class="product-price">$280</p>
           </div>
         </article>
 
-        <article class="product-card" data-product="tennis-bracelet" data-has-3d="false">
+        <article class="product-card" id="pearl-gold-earring" data-product="pearl-gold-earring" data-has-3d="true">
           <div class="product-image">
             <div class="placeholder-bracelet variant-3"></div>
           </div>
           <div class="product-info">
-            <h3>Tennis Bracelet</h3>
-            <p class="product-category">Bracelets</p>
-            <p class="product-price">$2,100</p>
-          </div>
-        </article>
-
-        <!-- More Ring Products -->
-        <article class="product-card" data-product="rose-gold" data-has-3d="false">
-          <div class="product-image">
-            <div class="placeholder-ring variant-4"></div>
-          </div>
-          <div class="product-info">
-            <h3>Rose Gold Band</h3>
-            <p class="product-category">Rings</p>
+            <h3>Gold Earring with a Pearl</h3>
+            <p class="product-category">Earrings</p>
             <p class="product-price">$520</p>
-          </div>
-        </article>
-
-        <article class="product-card" data-product="eternity-band" data-has-3d="true">
-          <div class="product-image">
-            <div class="placeholder-ring variant-5"></div>
-          </div>
-          <div class="product-info">
-            <h3>Eternity Band</h3>
-            <p class="product-category">Rings</p>
-            <p class="product-price">$1,650</p>
-          </div>
-        </article>
-
-        <article class="product-card" data-product="signet-ring" data-has-3d="false">
-          <div class="product-image">
-            <div class="placeholder-ring variant-6"></div>
-          </div>
-          <div class="product-info">
-            <h3>Signet Ring</h3>
-            <p class="product-category">Rings</p>
-            <p class="product-price">$890</p>
           </div>
         </article>
       </div>
@@ -222,15 +164,15 @@
 
   <footer class="site-footer">
     <div class="footer-brand">
-      <span class="brand-mark">NOMA</span>
+      <img class="footer-logo" src="assets/logos/noma-logo-alt.png" alt="NOMA Fine Jewelry" />
       <p>Fine jewelry, crafted with care.</p>
     </div>
     <div class="footer-links">
       <a href="products.html">Shop All</a>
-      <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#custom-engraving">Custom Engraving</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="index.html#best-sellers">Best Sellers</a>
+      <a href="index.html#collections">Collections</a>
+      <a href="index.html#bundles">Bundles</a>
+      <a href="index.html#reviews">Reviews</a>
     </div>
     <div class="footer-meta">
       <span>© 2026 NOMA</span>
@@ -314,89 +256,61 @@
 
       // Product data
       const productData = {
-        'classic-gold-band': {
-          title: 'Classic Gold Band',
+        'gold-ring': {
+          title: 'Gold Ring',
           category: 'Rings',
           price: '$450',
-          description: 'A timeless gold band ring featuring classic design and expert craftsmanship. Perfect for everyday wear or as a wedding band. Made from 14k gold with a polished finish.',
-          has3d: true
+          description: 'Classic gold ring with a polished finish and a refined silhouette.',
+          has3d: true,
+          image: 'https://t4.ftcdn.net/jpg/01/62/16/95/240_F_162169546_TXWbzLVtl8xPHS6kQhCZpXn5eAcseKdy.jpg'
         },
-        'diamond-solitaire': {
-          title: 'Diamond Solitaire Ring',
-          category: 'Rings',
-          price: '$1,850',
-          description: 'Elegant solitaire ring featuring a brilliant-cut diamond set in platinum. The classic six-prong setting ensures security while maximizing light reflection.',
-          has3d: true
-        },
-        'stackable-silver': {
-          title: 'Stackable Silver Band',
-          category: 'Rings',
+        'gold-earrings': {
+          title: 'Gold Earrings',
+          category: 'Earrings',
           price: '$320',
-          description: 'Minimalist sterling silver band designed for stacking. Its slim profile makes it perfect for wearing alone or with multiple rings.',
-          has3d: false
+          description: 'Warm gold earrings that add a refined glow to any look.',
+          has3d: true,
+          image: 'https://t3.ftcdn.net/jpg/04/91/84/06/240_F_491840698_kRThIl1magryzzojHMeQh6oa2t0aOHEG.jpg'
         },
-        'pearl-drop': {
-          title: 'Pearl Drop Pendant',
+        'pearl-necklace': {
+          title: 'Pearl Necklace',
           category: 'Necklaces',
           price: '$680',
-          description: 'Elegant freshwater pearl pendant suspended from a delicate gold chain. The pearl\'s natural luster creates a sophisticated and timeless look.',
-          has3d: true
+          description: 'Classic pearls with a soft, luminous sheen for timeless layering.',
+          has3d: true,
+          image: 'https://t3.ftcdn.net/jpg/01/96/38/18/240_F_196381885_sNQQNy1AgocHkT0ksEoZxGqkSZsfU7kD.jpg'
         },
-        'diamond-pendant': {
-          title: 'Diamond Pendant',
-          category: 'Necklaces',
-          price: '$1,250',
-          description: 'Stunning diamond pendant featuring a brilliant-cut stone in a bezel setting. Comes with an 18-inch white gold chain.',
-          has3d: false
-        },
-        'gold-chain': {
-          title: 'Gold Chain Necklace',
+        'moon-necklace': {
+          title: 'Moon Necklace',
           category: 'Necklaces',
           price: '$850',
-          description: 'Classic gold chain necklace with a medium link design. Versatile piece that complements any outfit, from casual to formal.',
-          has3d: false
+          description: 'A moon pendant necklace with a delicate, celestial charm.',
+          has3d: true,
+          image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8amV3ZWxyeXxlbnwwfHwwfHx8MA%3D%3D'
         },
-        'elegant-cuff': {
-          title: 'Elegant Cuff Bracelet',
+        'gold-bracelet': {
+          title: 'Gold Bracelet',
           category: 'Bracelets',
           price: '$580',
-          description: 'Sophisticated cuff bracelet crafted from polished gold. The open design allows for easy adjustment and comfortable wear.',
-          has3d: true
+          description: 'Sleek gold bracelet designed for everyday polish.',
+          has3d: true,
+          image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
         },
-        'chain-link': {
-          title: 'Chain Link Bracelet',
-          category: 'Bracelets',
-          price: '$720',
-          description: 'Modern chain link bracelet featuring an interlocking design. Made from sterling silver with a secure clasp closure.',
-          has3d: false
+        'silver-earring': {
+          title: 'Silver Earring',
+          category: 'Earrings',
+          price: '$280',
+          description: 'Minimal silver earring with a clean, modern finish.',
+          has3d: true,
+          image: 'https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
         },
-        'tennis-bracelet': {
-          title: 'Tennis Bracelet',
-          category: 'Bracelets',
-          price: '$2,100',
-          description: 'Classic tennis bracelet featuring a continuous line of diamonds. Each stone is precision-set in white gold for maximum brilliance.',
-          has3d: false
-        },
-        'rose-gold': {
-          title: 'Rose Gold Band',
-          category: 'Rings',
+        'pearl-gold-earring': {
+          title: 'Gold Earring with a Pearl',
+          category: 'Earrings',
           price: '$520',
-          description: 'Beautiful rose gold band with a warm, romantic hue. The subtle color makes it perfect for mixing with other metals.',
-          has3d: false
-        },
-        'eternity-band': {
-          title: 'Eternity Band',
-          category: 'Rings',
-          price: '$1,650',
-          description: 'Stunning eternity band featuring diamonds set all around the band. Symbolizes endless love and commitment.',
-          has3d: true
-        },
-        'signet-ring': {
-          title: 'Signet Ring',
-          category: 'Rings',
-          price: '$890',
-          description: 'Classic signet ring with a flat top perfect for engraving. Crafted from solid gold with a polished finish.',
-          has3d: false
+          description: 'Gold earring finished with a luminous pearl accent.',
+          has3d: true,
+          image: 'https://images.unsplash.com/photo-1590166223826-12dee1677420?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
         }
       };
 
@@ -405,6 +319,23 @@
       const modalClose = document.querySelector('.modal-close');
       const modalVisual = document.querySelector('.modal-visual');
       const productCards = document.querySelectorAll('.product-card');
+
+      productCards.forEach((card) => {
+        const productId = card.dataset.product;
+        const product = productData[productId];
+        if (!product || !product.image) return;
+
+        const imageWrap = card.querySelector('.product-image');
+        if (!imageWrap) return;
+
+        imageWrap.innerHTML = '';
+        const img = document.createElement('img');
+        img.className = 'product-card-image';
+        img.src = product.image;
+        img.alt = product.title;
+        img.loading = 'lazy';
+        imageWrap.appendChild(img);
+      });
 
       // Ensure modal is hidden on load
       if (modal) {
@@ -434,26 +365,13 @@
 
         modalVisual.innerHTML = '';
 
-        if (product.has3d) {
-          const viewer3d = document.createElement('div');
-          viewer3d.className = 'sketchfab-wrapper';
-          viewer3d.innerHTML = `
-            <iframe
-              title="Jewelry 3D Model"
-              frameborder="0"
-              allowfullscreen
-              mozallowfullscreen="true"
-              webkitallowfullscreen="true"
-              allow="autoplay; fullscreen; xr-spatial-tracking"
-              xr-spatial-tracking
-              execution-while-out-of-viewport
-              execution-while-not-rendered
-              web-share
-              src="https://sketchfab.com/models/1ff3e6aac91342a0bab946c3dd740b08/embed?autostart=1&preload=1&transparent=1&ui_infos=0&ui_controls=0&ui_watermark=0&ui_stop=0&ui_hint=0&ui_fullscreen=0&ui_vr=0&ui_annotations=0&ui_ar=0&ui_general_controls=0&ui_color=ffffff">
-            </iframe>
-            <div class="sketchfab-mask" aria-hidden="true"></div>
-          `;
-          modalVisual.appendChild(viewer3d);
+        if (product.image) {
+          const img = document.createElement('img');
+          img.className = 'modal-product-image';
+          img.src = product.image;
+          img.alt = product.title;
+          img.loading = 'lazy';
+          modalVisual.appendChild(img);
         } else {
           const placeholder = document.createElement('div');
           placeholder.className = 'modal-placeholder-img';
@@ -465,16 +383,59 @@
         document.body.style.overflow = 'hidden';
       };
 
+      const openFromHash = () => {
+        if (!window.location.hash) return;
+        const target = document.querySelector(window.location.hash);
+        if (!target || !target.classList.contains('product-card')) return;
+        openModal(target);
+      };
+
       productCards.forEach(card => {
         card.style.cursor = 'pointer';
         card.addEventListener('click', () => openModal(card));
       });
+
+      openFromHash();
+      window.addEventListener('hashchange', openFromHash);
 
       modalClose.addEventListener('click', closeModal);
 
       window.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
       });
+
+      window.addEventListener('keyup', (event) => {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
+          closeModal();
+        }
+      });
+
+      const updateFocusedSection = () => {
+        const sections = Array.from(document.querySelectorAll('.section'));
+        if (!sections.length) return;
+
+        const viewportCenter = window.innerHeight / 2;
+        let closestSection = null;
+        let closestDistance = Number.POSITIVE_INFINITY;
+
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          const sectionCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(sectionCenter - viewportCenter);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSection = section;
+          }
+        });
+
+        sections.forEach((section) => {
+          section.classList.toggle('in-focus', section === closestSection);
+        });
+      };
+
+      window.addEventListener('scroll', updateFocusedSection, { passive: true });
+      window.addEventListener('resize', updateFocusedSection);
+      updateFocusedSection();
   </script>
 </body>
 </html>
