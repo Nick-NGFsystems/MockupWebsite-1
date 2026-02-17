@@ -6,7 +6,7 @@
   <title>Shop All Products | NOMA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="no-section-focus">
@@ -29,7 +29,7 @@
         <li class="nav-best"><a href="index.html#best-sellers">Best Sellers</a></li>
         <li class="nav-collections"><a href="index.html#collections">Collections</a></li>
         <li class="nav-reviews"><a href="index.html#reviews">Reviews</a></li>
-        <li class="nav-bundles"><a href="index.html#bundles">Bundles</a></li>
+        <li class="nav-bundles"><a href="#bundles">Bundles</a></li>
         <li class="nav-story"><a href="index.html#founder">Our Story</a></li>
         <li class="nav-shop"><a href="products.html">Shop All</a></li>
       </ul>
@@ -195,6 +195,169 @@
         </article>
       </div>
     </section>
+
+    <section class="section bundles" id="bundles">
+      <div class="section-header">
+        <p class="eyebrow">Get More, For Less</p>
+        <h2>Bundle savings on curated sets.</h2>
+      </div>
+      <div class="bundles-grid">
+        <article class="bundle-card">
+          <div class="bundle-badge">Save 30%</div>
+          <h3>Triple Hoop Bundle</h3>
+          <p>Save 30% on our best hoops. Mix metals or keep it classic — the choice is yours.</p>
+          <div class="price-row">
+            <span class="price">$104</span>
+            <span class="price-compare">$132</span>
+            <span class="sale-tag">Bundle</span>
+          </div>
+          <button class="solid">Add Bundle to Cart</button>
+        </article>
+        <article class="bundle-card">
+          <div class="bundle-badge">Save 29%</div>
+          <h3>Essentials Bracelet Set</h3>
+          <p>Everyday layers with a polished shine. A complete wrist stack in one curated set.</p>
+          <div class="price-row">
+            <span class="price">$108</span>
+            <span class="price-compare">$152</span>
+            <span class="sale-tag">Bundle</span>
+          </div>
+          <button class="solid">Add Bundle to Cart</button>
+        </article>
+        <article class="bundle-card">
+          <div class="bundle-badge">Save 29%</div>
+          <h3>Sunkissed Necklace Set</h3>
+          <p>Warm gold layers for golden hour. Three lengths, one effortlessly radiant look.</p>
+          <div class="price-row">
+            <span class="price">$84</span>
+            <span class="price-compare">$118</span>
+            <span class="sale-tag">Bundle</span>
+          </div>
+          <button class="solid">Add Bundle to Cart</button>
+        </article>
+        <article class="bundle-card">
+          <div class="bundle-badge">Save 30%</div>
+          <h3>Color Pop Bundle</h3>
+          <p>Playful accents for daily styling. Bold pieces that layer beautifully together.</p>
+          <div class="price-row">
+            <span class="price">$85</span>
+            <span class="price-compare">$121</span>
+            <span class="sale-tag">Bundle</span>
+          </div>
+          <button class="solid">Add Bundle to Cart</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section engraving-showcase" id="engraving">
+      <div class="engraving-container">
+        <div class="engraving-content">
+          <p class="eyebrow">Personalize Your Piece</p>
+          <h2>Custom Engraving</h2>
+          <p class="lede">Add your message, a name, or a date — complimentary with every purchase. Up to 12 characters.</p>
+          <div class="engraving-form">
+            <div class="engraving-field">
+              <div class="field-label-row">
+                <label for="engTextInput">Your Text</label>
+                <span class="char-count"><span id="charUsed">0</span> / 12</span>
+              </div>
+              <input id="engTextInput" class="engraving-input" type="text" maxlength="12" placeholder="e.g. FOREVER" autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="engraving-field">
+              <label>Font Style</label>
+              <div class="font-options">
+                <button class="font-btn is-active" data-font="serif" type="button">
+                  <span class="font-sample" style="font-family:'Cormorant Garamond',serif">Aa</span>
+                  <span>Serif</span>
+                </button>
+                <button class="font-btn" data-font="script" type="button">
+                  <span class="font-sample" style="font-family:'Dancing Script',cursive">Aa</span>
+                  <span>Script</span>
+                </button>
+                <button class="font-btn" data-font="modern" type="button">
+                  <span class="font-sample" style="font-family:'Manrope',sans-serif;letter-spacing:0.08em">Aa</span>
+                  <span>Modern</span>
+                </button>
+              </div>
+            </div>
+            <div class="engraving-plate-wrap">
+              <span class="plate-label">Text Preview</span>
+              <div class="engraving-plate">
+                <span class="engraving-text" data-font="serif">YOUR TEXT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="engraving-visual">
+          <div class="simple-ring">
+            <svg viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg" class="ring-svg">
+              <!-- Oval background with gradient-like gold -->
+              <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#e8c547;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#d4a76d;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#c89850;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <rect x="20" y="20" width="280" height="100" rx="20" fill="url(#goldGrad)" stroke="#a87838" stroke-width="1.5"/>
+              <!-- Engraved text -->
+              <text id="ringTextEl" x="160" y="76" text-anchor="middle" font-size="28" font-weight="700" fill="#f7f4ef" font-family="'Cormorant Garamond', serif" letter-spacing="3">YOUR TEXT</text>
+            </svg>
+          </div>
+          <p class="ring-caption">Preview</p>
+          <div class="color-swatches">
+            <button class="color-swatch is-active" data-color="yellow-gold" style="--swatch-color:#d4af37;--swatch-light:#ffd700;--swatch-dark:#b8860b" title="Yellow Gold">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="swatch-ring">
+                <defs>
+                  <linearGradient id="grad-yellow-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#grad-yellow-gold)" stroke-width="6"/>
+              </svg>
+            </button>
+            <button class="color-swatch" data-color="rose-gold" style="--swatch-color:#d4847b;--swatch-light:#e8b5a8;--swatch-dark:#b75a4a" title="Rose Gold">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="swatch-ring">
+                <defs>
+                  <linearGradient id="grad-rose-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#e8b5a8;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#d4847b;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#b75a4a;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#grad-rose-gold)" stroke-width="6"/>
+              </svg>
+            </button>
+            <button class="color-swatch" data-color="white-gold" style="--swatch-color:#f5f5f5;--swatch-light:#ffffff;--swatch-dark:#e0e0e0" title="White Gold">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="swatch-ring">
+                <defs>
+                  <linearGradient id="grad-white-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#f5f5f5;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#grad-white-gold)" stroke-width="6"/>
+              </svg>
+            </button>
+            <button class="color-swatch" data-color="platinum" style="--swatch-color:#e8e8e8;--swatch-light:#ffffff;--swatch-dark:#d0d0d0" title="Platinum">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="swatch-ring">
+                <defs>
+                  <linearGradient id="grad-platinum" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#e8e8e8;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#d0d0d0;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#grad-platinum)" stroke-width="6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -206,7 +369,7 @@
       <a href="products.html">Shop All</a>
       <a href="index.html#best-sellers">Best Sellers</a>
       <a href="index.html#collections">Collections</a>
-      <a href="index.html#bundles">Bundles</a>
+      <a href="#bundles">Bundles</a>
       <a href="index.html#reviews">Reviews</a>
     </div>
     <div class="footer-meta">
@@ -232,7 +395,6 @@
           <p id="modalDescription"></p>
           <div class="modal-actions">
             <button class="solid add-to-cart">Add to Cart</button>
-            <button class="ghost">Add Custom Engraving</button>
           </div>
         </div>
       </div>
@@ -552,6 +714,100 @@
       const addToCartButton = document.querySelector('.add-to-cart');
       const productCards = document.querySelectorAll('.product-card');
       let currentModalItem = null;
+
+      // ── Custom Engraving Section ──────────────────────────────────
+      const engInput    = document.getElementById('engTextInput');
+      const charUsed    = document.getElementById('charUsed');
+      const flatText    = document.querySelector('.engraving-text');
+      const ringTextEl  = document.getElementById('ringTextEl');
+      const fontBtns    = document.querySelectorAll('.font-btn');
+      let currentFont   = 'serif';
+
+      const fontFamilyMap = {
+        serif:  "'Cormorant Garamond', 'Times New Roman', serif",
+        script: "'Dancing Script', cursive",
+        modern: "'Manrope', sans-serif",
+      };
+
+      const updateEngraving = () => {
+        const raw     = engInput ? engInput.value : '';
+        const display = raw.trim() || 'YOUR TEXT';
+        const upper   = display.toUpperCase();
+
+        // Character count
+        if (charUsed) charUsed.textContent = raw.length;
+
+        // Flat plate preview
+        if (flatText) {
+          flatText.textContent = display;
+          flatText.setAttribute('data-font', currentFont);
+        }
+
+        // Ring text - simple approach
+        if (ringTextEl) {
+          ringTextEl.textContent = upper;
+          ringTextEl.setAttribute('font-family', fontFamilyMap[currentFont]);
+          // Scale font size based on text length
+          const len = upper.length;
+          const fs  = len <= 4 ? 32 : len <= 7 ? 26 : len <= 10 ? 21 : 16;
+          ringTextEl.setAttribute('font-size', fs);
+        }
+      };
+
+      // Font toggle buttons
+      fontBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          fontBtns.forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          currentFont = btn.dataset.font;
+          updateEngraving();
+        });
+      });
+      // Color swatches for ring
+      const colorSwatches = document.querySelectorAll('.color-swatch');
+      const goldGradient = document.getElementById('goldGrad');
+      const ringStroke = document.querySelector('.ring-svg rect');
+      
+      colorSwatches.forEach(swatch => {
+        swatch.addEventListener('click', () => {
+          colorSwatches.forEach(s => s.classList.remove('is-active'));
+          swatch.classList.add('is-active');
+          
+          const lightColor = swatch.style.getPropertyValue('--swatch-light').trim();
+          const midColor = swatch.style.getPropertyValue('--swatch-color').trim();
+          const darkColor = swatch.style.getPropertyValue('--swatch-dark').trim();
+          const colorType = swatch.getAttribute('data-color');
+          
+          const stop0 = goldGradient.querySelector('stop:nth-child(1)');
+          const stop1 = goldGradient.querySelector('stop:nth-child(2)');
+          const stop2 = goldGradient.querySelector('stop:nth-child(3)');
+          
+          stop0.setAttribute('style', `stop-color:${lightColor};stop-opacity:1`);
+          stop1.setAttribute('style', `stop-color:${midColor};stop-opacity:1`);
+          stop2.setAttribute('style', `stop-color:${darkColor};stop-opacity:1`);
+          
+          // Convert hex to RGB for stroke
+          const hexToDec = (hex) => parseInt(hex, 16);
+          const dark = darkColor.replace('#', '');
+          const r = hexToDec(dark.slice(0, 2));
+          const g = hexToDec(dark.slice(2, 4));
+          const b = hexToDec(dark.slice(4, 6));
+          const strokeColor = `rgba(${r}, ${g}, ${b}, 0.4)`;
+          ringStroke.setAttribute('stroke', strokeColor);
+          
+          // Change text color for light metals
+          if (colorType === 'white-gold' || colorType === 'platinum') {
+            ringTextEl.setAttribute('fill', '#2d2d2d');
+          } else {
+            ringTextEl.setAttribute('fill', '#f7f4ef');
+          }
+        });
+      });
+      engInput?.addEventListener('input', updateEngraving);
+
+      // Initialize on load
+      updateEngraving();
+      // ─────────────────────────────────────────────────────────────
 
       productCards.forEach((card) => {
         const productId = card.dataset.product;
