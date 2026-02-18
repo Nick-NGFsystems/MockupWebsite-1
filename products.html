@@ -280,12 +280,6 @@
                 </button>
               </div>
             </div>
-            <div class="engraving-plate-wrap">
-              <span class="plate-label">Text Preview</span>
-              <div class="engraving-plate">
-                <span class="engraving-text" data-font="serif">YOUR TEXT</span>
-              </div>
-            </div>
           </div>
         </div>
         <div class="engraving-visual">
@@ -718,7 +712,6 @@
       // ── Custom Engraving Section ──────────────────────────────────
       const engInput    = document.getElementById('engTextInput');
       const charUsed    = document.getElementById('charUsed');
-      const flatText    = document.querySelector('.engraving-text');
       const ringTextEl  = document.getElementById('ringTextEl');
       const fontBtns    = document.querySelectorAll('.font-btn');
       let currentFont   = 'serif';
@@ -736,12 +729,6 @@
 
         // Character count
         if (charUsed) charUsed.textContent = raw.length;
-
-        // Flat plate preview
-        if (flatText) {
-          flatText.textContent = display;
-          flatText.setAttribute('data-font', currentFont);
-        }
 
         // Ring text - simple approach
         if (ringTextEl) {

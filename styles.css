@@ -1031,62 +1031,6 @@ main {
 }
 
 /* Flat text preview plate */
-.engraving-plate-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.plate-label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.engraving-plate {
-  width: 100%;
-  min-height: 72px;
-  border-radius: 10px;
-  background: #fff;
-  border: 1.5px solid var(--border);
-  display: grid;
-  place-items: center;
-  padding: 12px 20px;
-  box-sizing: border-box;
-}
-
-.engraving-text {
-  font-size: 1.3rem;
-  color: var(--ink);
-  word-break: break-word;
-  text-align: center;
-  line-height: 1.2;
-}
-
-.engraving-text[data-font="serif"] {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.engraving-text[data-font="script"] {
-  font-family: "Dancing Script", cursive;
-  font-size: 1.5rem;
-  letter-spacing: 0.02em;
-  text-transform: none;
-}
-
-.engraving-text[data-font="modern"] {
-  font-family: "Manrope", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
 /* Ring visual */
 .engraving-visual {
   display: flex;
@@ -1978,19 +1922,6 @@ main {
 
   .font-sample {
     font-size: 1.1rem;
-  }
-
-  .engraving-plate {
-    min-height: 60px;
-  }
-
-  .engraving-text[data-font="serif"],
-  .engraving-text[data-font="script"] {
-    font-size: 1.2rem;
-  }
-
-  .engraving-text[data-font="modern"] {
-    font-size: 0.9rem;
   }
 
   .ring-svg {
