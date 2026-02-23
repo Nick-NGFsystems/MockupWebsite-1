@@ -698,6 +698,34 @@
           description: 'Gold earring finished with a luminous pearl accent.',
           has3d: true,
           image: 'https://images.unsplash.com/photo-1590166223826-12dee1677420?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
+        },
+        'triple-hoop-bundle': {
+          title: 'Triple Hoop Bundle',
+          category: 'Bundle',
+          price: '$104',
+          description: 'Save 30% on our best hoops. Mix metals or keep it classic — the choice is yours.',
+          image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8amV3ZWxyeXxlbnwwfHwwfHx8MA%3D%3D'
+        },
+        'essentials-bracelet-set': {
+          title: 'Essentials Bracelet Set',
+          category: 'Bundle',
+          price: '$108',
+          description: 'Everyday layers with a polished shine. A complete wrist stack in one curated set.',
+          image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
+        },
+        'sunkissed-necklace-set': {
+          title: 'Sunkissed Necklace Set',
+          category: 'Bundle',
+          price: '$84',
+          description: 'Warm gold layers for golden hour. Three lengths, one effortlessly radiant look.',
+          image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8amV3ZWxyeXxlbnwwfHwwfHx8MA%3D%3D'
+        },
+        'color-pop-bundle': {
+          title: 'Color Pop Bundle',
+          category: 'Bundle',
+          price: '$85',
+          description: 'Playful accents for daily styling. Bold pieces that layer beautifully together.',
+          image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGpld2Vscnl8ZW58MHx8MHx8fDA%3D'
         }
       };
 
@@ -896,6 +924,37 @@
 
       addToCartButton?.addEventListener('click', () => {
         addToCart(currentModalItem);
+      });
+
+      // Bundle buttons
+      const bundleButtons = document.querySelectorAll('.bundle-card .solid');
+      bundleButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const bundleCard = button.closest('.bundle-card');
+          if (!bundleCard) return;
+          
+          const bundleTitle = bundleCard.querySelector('h3')?.textContent || '';
+          const bundlePrice = bundleCard.querySelector('.price')?.textContent || '';
+          const bundleDesc = bundleCard.querySelector('p')?.textContent || '';
+          
+          // Map bundle titles to bundle data keys
+          const bundleMap = {
+            'Triple Hoop Bundle': 'triple-hoop-bundle',
+            'Essentials Bracelet Set': 'essentials-bracelet-set',
+            'Sunkissed Necklace Set': 'sunkissed-necklace-set',
+            'Color Pop Bundle': 'color-pop-bundle'
+          };
+          
+          const bundleKey = bundleMap[bundleTitle];
+          if (bundleKey && productData[bundleKey]) {
+            addToCart({
+              id: bundleKey,
+              title: bundleTitle,
+              price: bundlePrice,
+              image: productData[bundleKey].image
+            });
+          }
+        });
       });
 
       window.addEventListener('click', (e) => {

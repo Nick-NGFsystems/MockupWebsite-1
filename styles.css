@@ -56,22 +56,58 @@ a:hover {
   padding: 0 20px;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
+  --banner-gap: 64px;
   position: sticky;
   top: 0;
   z-index: 20;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.announcement-banner p {
-  margin: 0;
-  color: white;
-  max-width: none;
+.announcement-banner .banner-track {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  animation: bannerScroll var(--banner-duration, 18s) linear infinite;
+  color: #ffffff;
+}
+
+.announcement-banner .banner-sequence {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--banner-gap);
+  padding-right: var(--banner-gap);
+}
+
+.announcement-banner .banner-text {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.announcement-banner:hover .banner-track,
+.announcement-banner:focus-within .banner-track {
+  animation-play-state: paused;
+}
+
+@keyframes bannerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-banner .banner-track {
+    animation: none;
+  }
 }
 
 h1, h2, h3 {

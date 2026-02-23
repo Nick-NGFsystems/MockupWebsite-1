@@ -12,7 +12,9 @@
 <body>
   <div id="top"></div>
   <div class="announcement-banner">
-    <p>Complimentary shipping over $100 | Personalization available</p>
+    <div class="banner-track" role="text" aria-label="Complimentary shipping over $100 | Personalization available">
+      <span class="banner-text">Complimentary shipping over $100 | Personalization available</span>
+    </div>
   </div>
   <header class="site-header">
     <div class="brand">
@@ -328,10 +330,49 @@
     const navOverlay = document.querySelector('.nav-overlay');
     const banner = document.querySelector('.announcement-banner');
     const header = document.querySelector('.site-header');
+    const bannerTrack = document.querySelector('.banner-track');
 
     const setMenuOffset = () => {
       const offset = (banner?.offsetHeight || 0) + (header?.offsetHeight || 0) + 12;
       document.documentElement.style.setProperty('--mobile-menu-top', `${offset}px`);
+    };
+
+    const initAnnouncementBanner = () => {
+      if (!bannerTrack || !banner) return;
+      const baseText = bannerTrack.querySelector('.banner-text');
+      const textContent = baseText?.textContent?.trim();
+      if (!textContent) return;
+
+      bannerTrack.innerHTML = '';
+
+      const sequence = document.createElement('div');
+      sequence.className = 'banner-sequence';
+      bannerTrack.appendChild(sequence);
+
+      const makeSpan = () => {
+        const span = document.createElement('span');
+        span.className = 'banner-text';
+        span.textContent = textContent;
+        return span;
+      };
+
+      sequence.appendChild(makeSpan());
+
+      const bannerWidth = banner.offsetWidth || 0;
+      let safety = 0;
+      while (sequence.scrollWidth < bannerWidth + 80 && safety < 20) {
+        sequence.appendChild(makeSpan());
+        safety += 1;
+      }
+
+      const clone = sequence.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      bannerTrack.appendChild(clone);
+
+      const sequenceWidth = sequence.scrollWidth || sequence.offsetWidth || 0;
+      const speed = 60;
+      const duration = Math.max(12, sequenceWidth / speed);
+      bannerTrack.style.setProperty('--banner-duration', `${duration}s`);
     };
 
     const closeNav = () => {
@@ -382,8 +423,12 @@
     window.addEventListener('keyup', (event) => {
       if (event.key === 'Escape') closeNav();
     });
-    window.addEventListener('resize', setMenuOffset);
+    window.addEventListener('resize', () => {
+      setMenuOffset();
+      initAnnouncementBanner();
+    });
     setMenuOffset();
+    initAnnouncementBanner();
 
     const setActiveNavLink = (sectionId) => {
       navLinks.forEach((link) => {
