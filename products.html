@@ -8,52 +8,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="site-chrome-loader.js" defer></script>
 </head>
 <body class="no-section-focus">
-  <div class="announcement-banner">
-    <p>Complimentary shipping over $100 | Personalization available</p>
-  </div>
-  <header class="site-header">
-    <div class="brand">
-      <a href="index.html" style="text-decoration: none; color: inherit;">
-        <img class="brand-logo" src="assets/logos/noma-logo-primary.png" alt="NOMA Fine Jewelry" />
-        <span class="sr-only">NOMA Fine Jewelry</span>
-      </a>
-    </div>
-    <nav class="nav" aria-label="Primary">
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span>
-      </button>
-      <ul class="nav-links" id="primary-nav">
-        <li class="nav-home"><a href="index.html#top">Home</a></li>
-        <li class="nav-best"><a href="index.html#best-sellers">Best Sellers</a></li>
-        <li class="nav-collections"><a href="index.html#collections">Collections</a></li>
-        <li class="nav-reviews"><a href="index.html#reviews">Reviews</a></li>
-        <li class="nav-bundles"><a href="#bundles">Bundles</a></li>
-        <li class="nav-story"><a href="index.html#founder">Our Story</a></li>
-        <li class="nav-shop"><a href="products.html">Shop All</a></li>
-      </ul>
-    </nav>
-    <div class="header-actions">
-      <a href="cart.html" style="text-decoration: none;"><button class="solid">Cart (0)</button></a>
-    </div>
-  </header>
-
-  <div class="nav-overlay" aria-hidden="true"></div>
-
-  <aside class="cart-drawer" aria-live="polite" aria-label="Mini cart">
-    <div class="cart-drawer-header" role="button" tabindex="0" aria-expanded="false">
-      <h3>Cart</h3>
-      <span class="cart-count">0 items</span>
-      <span class="cart-drawer-toggle" aria-hidden="true">v</span>
-    </div>
-    <div class="cart-drawer-list" id="cartDrawerList">
-      <p class="cart-empty">Your cart is empty.</p>
-    </div>
-  </aside>
+  <div id="site-chrome"></div>
 
   <main>
-    <section class="section products-hero">
+    <section class="section products-hero" id="shop">
       <div class="products-header">
         <h1>The NOMA Edit</h1>
         <p class="lede">A curated selection of refined essentials designed to layer, gift, and keep.</p>
@@ -259,9 +220,9 @@
             <div class="engraving-field">
               <div class="field-label-row">
                 <label for="engTextInput">Your Text</label>
-                <span class="char-count"><span id="charUsed">0</span> / 12</span>
+                <span class="char-count"><span id="charUsed">0</span> chars</span>
               </div>
-              <input id="engTextInput" class="engraving-input" type="text" maxlength="12" placeholder="e.g. FOREVER" autocomplete="off" spellcheck="false" />
+              <input id="engTextInput" class="engraving-input" type="text" placeholder="Your Text" autocomplete="off" spellcheck="false" />
             </div>
             <div class="engraving-field">
               <label>Font Style</label>
@@ -283,72 +244,13 @@
           </div>
         </div>
         <div class="engraving-visual">
-          <div class="simple-ring">
-            <svg viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg" class="ring-svg">
-              <!-- Oval background with gradient-like gold -->
-              <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style="stop-color:#e8c547;stop-opacity:1" />
-                  <stop offset="50%" style="stop-color:#d4a76d;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#c89850;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-              <rect x="20" y="20" width="280" height="100" rx="20" fill="url(#goldGrad)" stroke="#a87838" stroke-width="1.5"/>
-              <!-- Engraved text -->
-              <text id="ringTextEl" x="160" y="76" text-anchor="middle" font-size="28" font-weight="700" fill="#f7f4ef" font-family="'Cormorant Garamond', serif" letter-spacing="3">YOUR TEXT</text>
-            </svg>
+          <div class="tag-container">
+            <img src="BlankTAGnoBackground.png" alt="Jewelry Tag" class="tag-image" id="tagImage">
+            <div class="tag-text-overlay">
+              <span id="tagTextEl" class="tag-text" data-font="serif">YOUR TEXT</span>
+            </div>
           </div>
           <p class="ring-caption">Preview</p>
-          <div class="color-swatches">
-            <button class="color-swatch is-active" data-color="yellow-gold" style="--swatch-color:#d4af37;--swatch-light:#ffd700;--swatch-dark:#b8860b" title="Yellow Gold">
-              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="swatch-ring">
-                <defs>
-                  <linearGradient id="grad-yellow-gold" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#grad-yellow-gold)" stroke-width="6"/>
-              </svg>
-            </button>
-            <button class="color-swatch" data-color="rose-gold" style="--swatch-color:#d4847b;--swatch-light:#e8b5a8;--swatch-dark:#b75a4a" title="Rose Gold">
-              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="swatch-ring">
-                <defs>
-                  <linearGradient id="grad-rose-gold" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#e8b5a8;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#d4847b;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#b75a4a;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#grad-rose-gold)" stroke-width="6"/>
-              </svg>
-            </button>
-            <button class="color-swatch" data-color="white-gold" style="--swatch-color:#f5f5f5;--swatch-light:#ffffff;--swatch-dark:#e0e0e0" title="White Gold">
-              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="swatch-ring">
-                <defs>
-                  <linearGradient id="grad-white-gold" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#f5f5f5;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#grad-white-gold)" stroke-width="6"/>
-              </svg>
-            </button>
-            <button class="color-swatch" data-color="platinum" style="--swatch-color:#e8e8e8;--swatch-light:#ffffff;--swatch-dark:#d0d0d0" title="Platinum">
-              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="swatch-ring">
-                <defs>
-                  <linearGradient id="grad-platinum" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#e8e8e8;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#d0d0d0;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <circle cx="30" cy="30" r="20" fill="none" stroke="url(#grad-platinum)" stroke-width="6"/>
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
     </section>
@@ -396,12 +298,35 @@
   </div>
 
   <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const navOverlay = document.querySelector('.nav-overlay');
-    const banner = document.querySelector('.announcement-banner');
-    const header = document.querySelector('.site-header');
+    const onSiteChromeReady = (callback) => {
+      let resolved = false;
+      const run = () => {
+        if (resolved) return;
+        resolved = true;
+        document.removeEventListener('siteChromeReady', run);
+        callback();
+      };
+
+      if (window.siteChromeReady && typeof window.siteChromeReady.then === 'function') {
+        window.siteChromeReady.then(run).catch(run);
+        return;
+      }
+
+      if (document.querySelector('.site-header')) {
+        run();
+        return;
+      }
+
+      document.addEventListener('siteChromeReady', run, { once: true });
+    };
+
+    onSiteChromeReady(() => {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const navOverlay = document.querySelector('.nav-overlay');
+      const banner = document.querySelector('.announcement-banner');
+      const header = document.querySelector('.site-header');
 
     const setMenuOffset = () => {
       const offset = (banner?.offsetHeight || 0) + (header?.offsetHeight || 0) + 12;
@@ -445,11 +370,19 @@
     window.addEventListener('resize', setMenuOffset);
     setMenuOffset();
 
-    const setActiveNavForPage = () => {
-      const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const setActiveNavLink = (sectionId) => {
+      const highlightIds = new Set(['shop', 'engraving', 'bundles']);
       navLinks.forEach((link) => {
-        const href = (link.getAttribute('href') || '').split('#')[0].toLowerCase();
-        const isActive = href === page;
+        const href = link.getAttribute('href') || '';
+        const hashIndex = href.indexOf('#');
+        if (hashIndex === -1) {
+          link.classList.remove('active');
+          link.removeAttribute('aria-current');
+          return;
+        }
+
+        const targetId = href.slice(hashIndex + 1);
+        const isActive = Boolean(sectionId && targetId === sectionId && highlightIds.has(targetId));
         link.classList.toggle('active', isActive);
         if (isActive) {
           link.setAttribute('aria-current', 'page');
@@ -458,8 +391,6 @@
         }
       });
     };
-
-    setActiveNavForPage();
 
     const cartDrawer = document.querySelector('.cart-drawer');
     const cartDrawerList = document.getElementById('cartDrawerList');
@@ -740,7 +671,8 @@
       // ── Custom Engraving Section ──────────────────────────────────
       const engInput    = document.getElementById('engTextInput');
       const charUsed    = document.getElementById('charUsed');
-      const ringTextEl  = document.getElementById('ringTextEl');
+      const tagTextEl   = document.getElementById('tagTextEl');
+      const tagImage    = document.getElementById('tagImage');
       const fontBtns    = document.querySelectorAll('.font-btn');
       let currentFont   = 'serif';
 
@@ -750,78 +682,161 @@
         modern: "'Manrope', sans-serif",
       };
 
-      const updateEngraving = () => {
+      let lastValidInput = '';
+      const MAX_FONT_SIZE = 42;
+      const MIN_FONT_SIZE = 12;
+      const MODERN_PLACEHOLDER_FIT_RATIO = 0.96;
+      const MODERN_PLACEHOLDER_SIZE_OFFSET = 2;
+      const placeholderFontSizeByFont = {};
+      const textMeasureCanvas = document.createElement('canvas');
+      const textMeasureContext = textMeasureCanvas.getContext('2d');
+
+      const measureTextWidth = (text, fontSizePx) => {
+        if (!tagTextEl || !textMeasureContext) return 0;
+        const computed = getComputedStyle(tagTextEl);
+        const fontWeight = computed.fontWeight || '700';
+        const fontFamily = computed.fontFamily || fontFamilyMap[currentFont];
+        const letterSpacing = parseFloat(computed.letterSpacing) || 0;
+
+        textMeasureContext.font = `${fontWeight} ${fontSizePx}px ${fontFamily}`;
+        const baseWidth = textMeasureContext.measureText(text).width;
+        const extraSpacing = Math.max(0, text.length - 1) * letterSpacing;
+        return baseWidth + extraSpacing;
+      };
+
+      const getBestFitFontSize = (text, maxWidth) => {
+        if (!maxWidth) return MIN_FONT_SIZE;
+
+        let low = MIN_FONT_SIZE;
+        let high = MAX_FONT_SIZE;
+        let best = MIN_FONT_SIZE;
+
+        while (low <= high) {
+          const mid = Math.floor((low + high) / 2);
+          const width = measureTextWidth(text, mid);
+
+          if (width <= maxWidth) {
+            best = mid;
+            low = mid + 1;
+          } else {
+            high = mid - 1;
+          }
+        }
+
+        return best;
+      };
+
+      const textFitsOverlay = () => {
+        if (!tagTextEl) return true;
+        const overlayContainer = tagTextEl.parentElement;
+        if (!overlayContainer) return true;
+        const containerWidth = overlayContainer.clientWidth * 0.98;
+        return tagTextEl.scrollWidth <= containerWidth;
+      };
+
+      const updateEngraving = (forcePlaceholderRecalc = false) => {
         const raw     = engInput ? engInput.value : '';
         const display = raw.trim() || 'YOUR TEXT';
         const upper   = display.toUpperCase();
+        const isPlaceholder = raw.trim() === '';
 
         // Character count
         if (charUsed) charUsed.textContent = raw.length;
 
-        // Ring text - simple approach
-        if (ringTextEl) {
-          ringTextEl.textContent = upper;
-          ringTextEl.setAttribute('font-family', fontFamilyMap[currentFont]);
-          // Scale font size based on text length
-          const len = upper.length;
-          const fs  = len <= 4 ? 32 : len <= 7 ? 26 : len <= 10 ? 21 : 16;
-          ringTextEl.setAttribute('font-size', fs);
+        // Tag text overlay with dynamic scaling
+        if (tagTextEl) {
+          tagTextEl.textContent = upper;
+          tagTextEl.setAttribute('data-font', currentFont);
+
+          const overlayContainer = tagTextEl.parentElement;
+          const maxWidth = overlayContainer ? overlayContainer.clientWidth * 0.98 : 0;
+          let fontSize;
+
+          if (isPlaceholder && !forcePlaceholderRecalc && placeholderFontSizeByFont[currentFont]) {
+            fontSize = placeholderFontSizeByFont[currentFont];
+          } else {
+            const fitWidth = (isPlaceholder && currentFont === 'modern')
+              ? maxWidth * MODERN_PLACEHOLDER_FIT_RATIO
+              : maxWidth;
+            fontSize = getBestFitFontSize(upper, fitWidth);
+            if (isPlaceholder && currentFont === 'modern') {
+              fontSize = Math.max(MIN_FONT_SIZE, fontSize - MODERN_PLACEHOLDER_SIZE_OFFSET);
+            }
+            if (isPlaceholder) {
+              placeholderFontSizeByFont[currentFont] = fontSize;
+            }
+          }
+
+          tagTextEl.style.fontSize = `${fontSize}px`;
+        }
+      };
+
+      const recalcEngravingStable = (syncFont = false) => {
+        updateEngraving();
+
+        requestAnimationFrame(() => {
+          updateEngraving();
+        });
+
+        setTimeout(() => {
+          updateEngraving();
+        }, 0);
+
+        if (syncFont && document.fonts?.load) {
+          const targetFamily = fontFamilyMap[currentFont] || "'Manrope', sans-serif";
+          document.fonts.load(`700 42px ${targetFamily}`).then(() => {
+            updateEngraving(true);
+          }).catch(() => {
+          });
         }
       };
 
       // Font toggle buttons
       fontBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+          if (btn.classList.contains('is-active') && currentFont === btn.dataset.font) {
+            return;
+          }
+
           fontBtns.forEach(b => b.classList.remove('is-active'));
           btn.classList.add('is-active');
           currentFont = btn.dataset.font;
-          updateEngraving();
-        });
-      });
-      // Color swatches for ring
-      const colorSwatches = document.querySelectorAll('.color-swatch');
-      const goldGradient = document.getElementById('goldGrad');
-      const ringStroke = document.querySelector('.ring-svg rect');
-      
-      colorSwatches.forEach(swatch => {
-        swatch.addEventListener('click', () => {
-          colorSwatches.forEach(s => s.classList.remove('is-active'));
-          swatch.classList.add('is-active');
-          
-          const lightColor = swatch.style.getPropertyValue('--swatch-light').trim();
-          const midColor = swatch.style.getPropertyValue('--swatch-color').trim();
-          const darkColor = swatch.style.getPropertyValue('--swatch-dark').trim();
-          const colorType = swatch.getAttribute('data-color');
-          
-          const stop0 = goldGradient.querySelector('stop:nth-child(1)');
-          const stop1 = goldGradient.querySelector('stop:nth-child(2)');
-          const stop2 = goldGradient.querySelector('stop:nth-child(3)');
-          
-          stop0.setAttribute('style', `stop-color:${lightColor};stop-opacity:1`);
-          stop1.setAttribute('style', `stop-color:${midColor};stop-opacity:1`);
-          stop2.setAttribute('style', `stop-color:${darkColor};stop-opacity:1`);
-          
-          // Convert hex to RGB for stroke
-          const hexToDec = (hex) => parseInt(hex, 16);
-          const dark = darkColor.replace('#', '');
-          const r = hexToDec(dark.slice(0, 2));
-          const g = hexToDec(dark.slice(2, 4));
-          const b = hexToDec(dark.slice(4, 6));
-          const strokeColor = `rgba(${r}, ${g}, ${b}, 0.4)`;
-          ringStroke.setAttribute('stroke', strokeColor);
-          
-          // Change text color for light metals
-          if (colorType === 'white-gold' || colorType === 'platinum') {
-            ringTextEl.setAttribute('fill', '#2d2d2d');
-          } else {
-            ringTextEl.setAttribute('fill', '#f7f4ef');
+
+          if (engInput) {
+            recalcEngravingStable(true);
+            while (engInput.value && !textFitsOverlay()) {
+              engInput.value = engInput.value.slice(0, -1);
+              recalcEngravingStable();
+            }
+            lastValidInput = engInput.value;
           }
+
+          recalcEngravingStable(true);
         });
       });
-      engInput?.addEventListener('input', updateEngraving);
+
+      engInput?.addEventListener('input', () => {
+        recalcEngravingStable();
+        if (engInput.value && !textFitsOverlay()) {
+          engInput.value = lastValidInput;
+          recalcEngravingStable();
+          return;
+        }
+        lastValidInput = engInput.value;
+      });
+
+      window.addEventListener('resize', () => {
+        Object.keys(placeholderFontSizeByFont).forEach((key) => {
+          delete placeholderFontSizeByFont[key];
+        });
+        recalcEngravingStable();
+      });
+      if (document.fonts?.ready) {
+        document.fonts.ready.then(recalcEngravingStable);
+      }
 
       // Initialize on load
-      updateEngraving();
+      recalcEngravingStable(true);
       // ─────────────────────────────────────────────────────────────
 
       productCards.forEach((card) => {
@@ -1024,6 +1039,8 @@
         });
 
         currentFocus = closestSection;
+        const focusId = closestSection?.id || 'shop';
+        setActiveNavLink(focusId);
       };
 
       const requestFocusUpdate = () => {
@@ -1038,6 +1055,7 @@
       window.addEventListener('scroll', requestFocusUpdate, { passive: true });
       window.addEventListener('resize', requestFocusUpdate);
       updateFocusedSection();
+    });
   </script>
 </body>
 </html>
