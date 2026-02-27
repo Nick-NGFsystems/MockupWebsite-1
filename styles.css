@@ -1107,7 +1107,7 @@ main {
 .tag-text-overlay {
   position: absolute;
   top: 11.14%;
-  left: 5.25%;
+  left: calc(5.25% + 2px);
   width: 72%;
   height: 76.58%;
   text-align: center;
