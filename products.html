@@ -683,48 +683,8 @@
       };
 
       let lastValidInput = '';
-      const MAX_FONT_SIZE = 42;
-      const MIN_FONT_SIZE = 12;
-      const MODERN_PLACEHOLDER_FIT_RATIO = 0.96;
-      const MODERN_PLACEHOLDER_SIZE_OFFSET = 2;
-      const placeholderFontSizeByFont = {};
-      const textMeasureCanvas = document.createElement('canvas');
-      const textMeasureContext = textMeasureCanvas.getContext('2d');
-
-      const measureTextWidth = (text, fontSizePx) => {
-        if (!tagTextEl || !textMeasureContext) return 0;
-        const computed = getComputedStyle(tagTextEl);
-        const fontWeight = computed.fontWeight || '700';
-        const fontFamily = computed.fontFamily || fontFamilyMap[currentFont];
-        const letterSpacing = parseFloat(computed.letterSpacing) || 0;
-
-        textMeasureContext.font = `${fontWeight} ${fontSizePx}px ${fontFamily}`;
-        const baseWidth = textMeasureContext.measureText(text).width;
-        const extraSpacing = Math.max(0, text.length - 1) * letterSpacing;
-        return baseWidth + extraSpacing;
-      };
-
-      const getBestFitFontSize = (text, maxWidth) => {
-        if (!maxWidth) return MIN_FONT_SIZE;
-
-        let low = MIN_FONT_SIZE;
-        let high = MAX_FONT_SIZE;
-        let best = MIN_FONT_SIZE;
-
-        while (low <= high) {
-          const mid = Math.floor((low + high) / 2);
-          const width = measureTextWidth(text, mid);
-
-          if (width <= maxWidth) {
-            best = mid;
-            low = mid + 1;
-          } else {
-            high = mid - 1;
-          }
-        }
-
-        return best;
-      };
+      const BASE_ENGRAVING_FONT_SIZE = 42;
+      const BASE_TAG_WIDTH = 400;
 
       const textFitsOverlay = () => {
         if (!tagTextEl) return true;
@@ -734,65 +694,37 @@
         return tagTextEl.scrollWidth <= containerWidth;
       };
 
-      const updateEngraving = (forcePlaceholderRecalc = false) => {
+      const updateEngraving = () => {
         const raw     = engInput ? engInput.value : '';
         const display = raw.trim() || 'YOUR TEXT';
         const upper   = display.toUpperCase();
-        const isPlaceholder = raw.trim() === '';
 
         // Character count
         if (charUsed) charUsed.textContent = raw.length;
 
-        // Tag text overlay with dynamic scaling
+        // Tag text overlay with fixed sizing
         if (tagTextEl) {
           tagTextEl.textContent = upper;
           tagTextEl.setAttribute('data-font', currentFont);
 
-          const overlayContainer = tagTextEl.parentElement;
-          const maxWidth = overlayContainer ? overlayContainer.clientWidth * 0.98 : 0;
-          let fontSize;
-
-          if (isPlaceholder && !forcePlaceholderRecalc && placeholderFontSizeByFont[currentFont]) {
-            fontSize = placeholderFontSizeByFont[currentFont];
-          } else {
-            const fitWidth = (isPlaceholder && currentFont === 'modern')
-              ? maxWidth * MODERN_PLACEHOLDER_FIT_RATIO
-              : maxWidth;
-            fontSize = getBestFitFontSize(upper, fitWidth);
-            if (isPlaceholder && currentFont === 'modern') {
-              fontSize = Math.max(MIN_FONT_SIZE, fontSize - MODERN_PLACEHOLDER_SIZE_OFFSET);
-            }
-            if (isPlaceholder) {
-              placeholderFontSizeByFont[currentFont] = fontSize;
-            }
-          }
-
+          const currentTagWidth = tagImage?.parentElement?.clientWidth || BASE_TAG_WIDTH;
+          const scale = currentTagWidth / BASE_TAG_WIDTH;
+          let scaledFontSize = Math.max(12, Math.round(BASE_ENGRAVING_FONT_SIZE * scale));
           if (currentFont === 'modern') {
-            fontSize = Math.max(MIN_FONT_SIZE, fontSize - 1);
+            scaledFontSize = Math.max(12, scaledFontSize - 2);
           }
-
-          tagTextEl.style.fontSize = `${fontSize}px`;
+          tagTextEl.style.fontSize = `${scaledFontSize}px`;
         }
       };
 
-      const recalcEngravingStable = (syncFont = false) => {
+      const normalizeInputToFit = () => {
+        if (!engInput) return;
         updateEngraving();
-
-        requestAnimationFrame(() => {
+        while (engInput.value && !textFitsOverlay()) {
+          engInput.value = engInput.value.slice(0, -1);
           updateEngraving();
-        });
-
-        setTimeout(() => {
-          updateEngraving();
-        }, 0);
-
-        if (syncFont && document.fonts?.load) {
-          const targetFamily = fontFamilyMap[currentFont] || "'Manrope', sans-serif";
-          document.fonts.load(`700 42px ${targetFamily}`).then(() => {
-            updateEngraving(true);
-          }).catch(() => {
-          });
         }
+        lastValidInput = engInput.value;
       };
 
       // Font toggle buttons
@@ -806,41 +738,27 @@
           btn.classList.add('is-active');
           currentFont = btn.dataset.font;
 
-          if (engInput) {
-            recalcEngravingStable(true);
-            while (engInput.value && !textFitsOverlay()) {
-              engInput.value = engInput.value.slice(0, -1);
-              recalcEngravingStable();
-            }
-            lastValidInput = engInput.value;
-          }
-
-          recalcEngravingStable(true);
+          normalizeInputToFit();
         });
       });
 
       engInput?.addEventListener('input', () => {
-        recalcEngravingStable();
+        updateEngraving();
         if (engInput.value && !textFitsOverlay()) {
           engInput.value = lastValidInput;
-          recalcEngravingStable();
+          updateEngraving();
           return;
         }
         lastValidInput = engInput.value;
       });
 
-      window.addEventListener('resize', () => {
-        Object.keys(placeholderFontSizeByFont).forEach((key) => {
-          delete placeholderFontSizeByFont[key];
-        });
-        recalcEngravingStable();
-      });
+      window.addEventListener('resize', normalizeInputToFit);
       if (document.fonts?.ready) {
-        document.fonts.ready.then(recalcEngravingStable);
+        document.fonts.ready.then(normalizeInputToFit);
       }
 
       // Initialize on load
-      recalcEngravingStable(true);
+      normalizeInputToFit();
       // ─────────────────────────────────────────────────────────────
 
       productCards.forEach((card) => {

@@ -320,22 +320,20 @@ p {
 
 .nav-toggle {
   display: none;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  min-width: 64px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.6);
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 6px;
   cursor: pointer;
-}
-
-.nav-toggle span {
-  width: 18px;
-  height: 1.8px;
-  background: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
 .header-actions {
