@@ -711,7 +711,7 @@
           const scale = currentTagWidth / BASE_TAG_WIDTH;
           let scaledFontSize = Math.max(12, Math.round(BASE_ENGRAVING_FONT_SIZE * scale));
           if (currentFont === 'modern') {
-            scaledFontSize = Math.max(12, scaledFontSize - 2);
+            scaledFontSize = Math.max(12, scaledFontSize - 3);
           }
           tagTextEl.style.fontSize = `${scaledFontSize}px`;
         }
