@@ -186,6 +186,11 @@ p {
   justify-content: center;
 }
 
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .brand-logo {
   width: auto;
   height: 100%;
@@ -570,6 +575,12 @@ button {
   box-shadow: 0 14px 44px rgba(25, 18, 12, 0.2);
 }
 
+.button-link.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(31, 27, 22, 0.22);
+}
+
 .button-link:hover {
   transform: translateY(-2px);
 }
@@ -710,6 +721,35 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.engraving-highlight {
+  border: 1px solid rgba(139, 47, 57, 0.25);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+  padding: 18px 18px 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.engraving-highlight .eyebrow {
+  margin: 0;
+}
+
+.engraving-highlight h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+
+.engraving-highlight p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.engraving-highlight .button-link {
+  width: fit-content;
 }
 
 .hero-meta {
@@ -1710,6 +1750,7 @@ main {
   .hero { grid-template-columns: 1fr; text-align: center; gap: 28px; }
   .hero-actions { justify-content: center; width: 100%; }
   .hero-actions button { flex: 1 1 140px; }
+  .engraving-highlight { text-align: left; }
   .hero-meta { justify-content: center; }
   .hero-visual { min-height: 320px; }
   .hero-static { aspect-ratio: 4 / 5; }
