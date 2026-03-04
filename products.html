@@ -767,6 +767,10 @@
             }
           }
 
+          if (currentFont === 'modern') {
+            fontSize = Math.max(MIN_FONT_SIZE, fontSize - 1);
+          }
+
           tagTextEl.style.fontSize = `${fontSize}px`;
         }
       };

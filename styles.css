@@ -1038,10 +1038,11 @@ main {
 .font-options {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .font-btn {
-  flex: 1;
+  flex: 1 1 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1092,9 +1093,10 @@ main {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  width: 400px;
-  max-width: 400px;
-  flex: 0 0 400px;
+  width: min(400px, 100%);
+  max-width: 100%;
+  flex: 0 1 auto;
+  box-sizing: border-box;
 }
 
 .tag-image {
@@ -1121,10 +1123,14 @@ main {
   display: block;
   font-size: 24px;
   font-weight: 700;
-  color: #000000;
+  color: #3f2d1a;
+  -webkit-text-fill-color: currentColor;
+  -webkit-text-stroke: 0.2px rgba(34, 22, 12, 0.3);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  opacity: 0.68;
+  mix-blend-mode: multiply;
+  text-shadow: 0 -0.9px 0 rgba(255, 246, 225, 0.28), 0 1.4px 0 rgba(58, 40, 20, 0.48), 0 2.6px 3px rgba(28, 18, 10, 0.24), 0 0 0.6px rgba(30, 20, 11, 0.2);
   transition: all 0.3s ease;
   white-space: nowrap;
   overflow: hidden;
@@ -1962,9 +1968,10 @@ main {
   }
 
   .tag-container {
-    width: 400px;
-    max-width: 400px;
-    flex: 0 0 400px;
+    width: min(400px, calc(100vw - 40px));
+    max-width: 100%;
+    flex: 0 1 auto;
+    padding: 16px;
   }
 
   .font-options {
@@ -1987,8 +1994,9 @@ main {
   }
 
   .tag-container {
-    width: 400px;
-    max-width: 400px;
-    flex: 0 0 400px;
+    width: min(400px, calc(100vw - 24px));
+    max-width: 100%;
+    flex: 0 1 auto;
+    padding: 10px;
   }
 }
