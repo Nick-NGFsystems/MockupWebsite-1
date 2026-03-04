@@ -957,6 +957,7 @@ main {
 /* ── Custom Engraving Section ──────────────────────────────────── */
 .engraving-showcase {
   background: linear-gradient(135deg, #fbf9f6 0%, #f7f4ef 60%, #efe8df 100%);
+  overflow-x: clip;
 }
 
 .engraving-container {
@@ -964,12 +965,15 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .engraving-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0;
 }
 
 .engraving-content .lede {
@@ -1085,6 +1089,8 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 14px;
+  width: 100%;
+  min-width: 0;
 }
 
 .tag-container {
@@ -1968,10 +1974,11 @@ main {
   }
 
   .tag-container {
-    width: min(400px, calc(100vw - 40px));
+    width: min(400px, 100%);
     max-width: 100%;
     flex: 0 1 auto;
     padding: 16px;
+    box-sizing: border-box;
   }
 
   .font-options {
@@ -1994,9 +2001,10 @@ main {
   }
 
   .tag-container {
-    width: min(400px, calc(100vw - 24px));
+    width: min(400px, 100%);
     max-width: 100%;
     flex: 0 1 auto;
     padding: 10px;
+    box-sizing: border-box;
   }
 }
