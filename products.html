@@ -6,7 +6,7 @@
   <title>Shop All Products | NOMA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cormorant:ital,wght@1,400;1,500;1,600&family=Manrope:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="site-chrome-loader.js" defer></script>
 </head>
@@ -228,16 +228,16 @@
               <label>Font Style</label>
               <div class="font-options">
                 <button class="font-btn is-active" data-font="serif" type="button">
-                  <span class="font-sample" style="font-family:'Cormorant Garamond',serif">Aa</span>
-                  <span>Serif</span>
+                  <span class="font-sample" style="font-family:'Open Sans',sans-serif">Aa</span>
+                  <span>Open Sans</span>
                 </button>
                 <button class="font-btn" data-font="script" type="button">
-                  <span class="font-sample" style="font-family:'Dancing Script',cursive">Aa</span>
-                  <span>Script</span>
+                  <span class="font-sample" style="font-family:'Cormorant',serif;font-style:italic">Aa</span>
+                  <span>Cormorant Italic</span>
                 </button>
                 <button class="font-btn" data-font="modern" type="button">
-                  <span class="font-sample" style="font-family:'Manrope',sans-serif;letter-spacing:0.08em">Aa</span>
-                  <span>Modern</span>
+                  <span class="font-sample" style="font-family:'Times New Roman',Times,serif">Aa</span>
+                  <span>Times New Roman</span>
                 </button>
               </div>
             </div>
@@ -677,9 +677,9 @@
       let currentFont   = 'serif';
 
       const fontFamilyMap = {
-        serif:  "'Cormorant Garamond', 'Times New Roman', serif",
-        script: "'Dancing Script', cursive",
-        modern: "'Manrope', sans-serif",
+        serif:  "'Open Sans', sans-serif",
+        script: "'Cormorant', serif",
+        modern: "'Times New Roman', Times, serif",
       };
 
       let lastValidInput = '';

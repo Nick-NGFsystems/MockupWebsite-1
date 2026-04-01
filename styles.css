@@ -1184,20 +1184,20 @@ main {
 }
 
 .tag-text[data-font="serif"] {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
-  letter-spacing: 0.12em;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.05em;
 }
 
 .tag-text[data-font="script"] {
-  font-family: "Dancing Script", cursive;
+  font-family: "Cormorant", serif;
+  font-style: italic;
   letter-spacing: 0.05em;
   text-transform: none;
 }
 
 .tag-text[data-font="modern"] {
-  font-family: "Manrope", sans-serif;
-  letter-spacing: 0.2em;
-  font-weight: 800;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.12em;
 }
 
 .ring-caption {
