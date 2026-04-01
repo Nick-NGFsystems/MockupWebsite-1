@@ -682,6 +682,12 @@
         modern: "'Times New Roman', Times, serif",
       };
 
+      const fontStyleMap = {
+        serif: 'normal',
+        script: 'italic',
+        modern: 'normal',
+      };
+
       let lastValidInput = '';
       const MAX_ENGRAVING_CHARS = 10;
       const BASE_ENGRAVING_FONT_SIZE = 42;
@@ -707,6 +713,8 @@
         if (tagTextEl) {
           tagTextEl.textContent = upper;
           tagTextEl.setAttribute('data-font', currentFont);
+          tagTextEl.style.fontFamily = fontFamilyMap[currentFont] || fontFamilyMap.serif;
+          tagTextEl.style.fontStyle = fontStyleMap[currentFont] || 'normal';
 
           const currentTagWidth = tagImage?.parentElement?.clientWidth || BASE_TAG_WIDTH;
           const scale = currentTagWidth / BASE_TAG_WIDTH;
