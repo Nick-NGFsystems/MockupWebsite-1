@@ -215,14 +215,14 @@
         <div class="engraving-content">
           <p class="eyebrow">Personalize Your Piece</p>
           <h2>Custom Engraving</h2>
-          <p class="lede">Add your message, a name, or a date — complimentary with every purchase. Up to 12 characters.</p>
+          <p class="lede">Add your message, a name, or a date — complimentary with every purchase. Up to 10 characters.</p>
           <div class="engraving-form">
             <div class="engraving-field">
               <div class="field-label-row">
                 <label for="engTextInput">Your Text</label>
                 <span class="char-count"><span id="charUsed">0</span> chars</span>
               </div>
-              <input id="engTextInput" class="engraving-input" type="text" placeholder="Your Text" autocomplete="off" spellcheck="false" />
+              <input id="engTextInput" class="engraving-input" type="text" placeholder="Your Text" autocomplete="off" spellcheck="false" maxlength="10" />
             </div>
             <div class="engraving-field">
               <label>Font Style</label>
@@ -683,6 +683,7 @@
       };
 
       let lastValidInput = '';
+      const MAX_ENGRAVING_CHARS = 10;
       const BASE_ENGRAVING_FONT_SIZE = 42;
       const BASE_TAG_WIDTH = 400;
 
@@ -719,6 +720,9 @@
 
       const normalizeInputToFit = () => {
         if (!engInput) return;
+        if (engInput.value.length > MAX_ENGRAVING_CHARS) {
+          engInput.value = engInput.value.slice(0, MAX_ENGRAVING_CHARS);
+        }
         updateEngraving();
         while (engInput.value && !textFitsOverlay()) {
           engInput.value = engInput.value.slice(0, -1);
@@ -743,6 +747,9 @@
       });
 
       engInput?.addEventListener('input', () => {
+        if (engInput.value.length > MAX_ENGRAVING_CHARS) {
+          engInput.value = engInput.value.slice(0, MAX_ENGRAVING_CHARS);
+        }
         updateEngraving();
         if (engInput.value && !textFitsOverlay()) {
           engInput.value = lastValidInput;
